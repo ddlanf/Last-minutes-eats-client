@@ -1,0 +1,119 @@
+.view-all-recipes-lists{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.view-all-recipes-logo{
+    border: 1px black solid;
+    margin-top: 15vw;
+    width: 20vw;
+    height: 20vw;
+    max-height: 200px;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.view-all-recipes-logo-food-image{
+    width: 100%;
+    text-align: center;
+    font-size: 5vw;
+}
+
+.view-all-recipes-recipes{
+    margin-top: 8%;
+    margin-bottom: 8%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+}
+
+.view-all-recipes-recipe{
+    width: 100%;
+    font-size: 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    border: 1px black solid;
+}
+
+.view-all-recipes-recipe-box{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-height: 30vw;
+}
+
+.view-all-recipes-rating{
+    margin: 0;
+    padding-left: 2%;
+    width: 100%;
+    font-size: 3.5vw;
+}
+
+.view-all-recipes-recipe-name{
+    margin: 0;
+    text-align: center;
+    font-size: 4.5vw;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.view-all-recipes-recipe-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.view-all-recipes-image-box{
+    max-width: 20%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+}
+
+.view-all-recipes-image{
+    max-width: 100%;
+    max-height: 25vw;
+}
+
+.view-all-recipes-preparation-time, .view-all-recipes-amount-of-steps, .view-all-recipes-amount-of-ingredients{
+    font-size: 3.5vw;
+}
+
+a.view-all-recipes-link{
+    color: black;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1000px) {
+
+    .view-all-recipes-recipes{
+        width: 75%;
+    }
+
+    .view-all-recipes-recipe{
+        font-size: 3vw;
+    }
+
+    .view-all-recipes-recipe-name{
+        font-size: 3vw;
+    }
+
+    .view-all-recipes-preparation-time, .view-all-recipes-amount-of-steps, .view-all-recipes-amount-of-ingredients{
+        font-size: 2vw;
+    }
+
+    .view-all-recipes-rating{
+        font-size: 2.5vw;
+    }
+
+    .view-all-recipes-image{
+        width: 100%;
+        max-height: 15vw;
+    }
+}
