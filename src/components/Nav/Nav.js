@@ -7,7 +7,7 @@ export default class Nav extends Component {
     render() {
 
         //for now
-        const landingPage = true;
+        const landingPage = !true;
 
         return (
             <nav className="nav-bar">
@@ -22,7 +22,7 @@ export default class Nav extends Component {
                 <div className="nav-bar-right-nav">
                     {landingPage ? 
                         <Link className="nav-bar-right-nav-link" to="/signup">Sign Up</Link> : 
-                        <Link className="nav-bar-right-nav-link" to="create-recipe">Create Recipe</Link>}
+                        <Link className="nav-bar-right-nav-link" to="make-recipe">Make Recipe</Link>}
                 </div>
             </nav>
         )

@@ -5,63 +5,82 @@ import './ViewRecipe.css'
 
 class ViewRecipe extends Component {
     
-    componentDidMount(){
-        const { recipeId } = this.props.match.params;
-       // const recipe = recipes.filter(recipe =>{ recipe.id === recipeId })
+   
+        
+    
+
+    makeStars(numberOfStars){
+        const stars = []
+
+        for(let i = 0; i < 5; i++){
+            if(i >= numberOfStars){
+                stars.push('☆')
+            }
+            else{ stars.push('★') }
+        }
+
+        return stars.join('')
+    }
+
+    makeIngredientsList(ingredients){
+        return ingredients.map((ingredient, index) =>{
+            return <li key={index}>{ingredient}</li>
+        })
+    }
+
+    makeStepsList(steps){
+        return steps.map((step, index)=>{
+            return <li key={index}>{step}</li>
+        })
     }
 
     render() {
+        const { recipeId } = this.props.match.params;
+        const recipe = recipes.filter(recipe => recipe.id === parseInt(recipeId))[0]
+     
         return (
             <>
                 <section className="view-recipe-logo">
-                    <div className="view-recipe-food-image">Logo</div>
+                    <div className="view-recipe-food-image"></div>
                 </section>
                 <section className="view-recipe-recipe">
                     <div className="view-recipe-main">
-                        <h1 className="view-recipe-recipe-name-desktop">Cheesy Noodle with Egg</h1>
+                        <h1 className="view-recipe-recipe-name-desktop">{recipe.name}</h1>
                         <div className="view-recipe-rating-desktop">
-                            ★★★★☆
+                          {this.makeStars(recipe.rating)}
                         </div>
-                        <div className="view-recipe-image">Image</div>
+                        <div className="view-recipe-image-box"> 
+                            <img className="view-recipe-image" alt={recipe.name} src={recipe.image} />
+                        </div>
+                        <h2 className="view-recipe-preparation-time-desktop">
+                            {recipe.preparation_time + recipe.preparation_unit.slice(0, 3)}
+                        </h2>
                     </div>
                     
                     <div className="view-recipe-main-detail">
-                        <h1 className="view-recipe-recipe-name-mobile">Cheesy Noodle with Egg</h1>
+                        <h1 className="view-recipe-recipe-name-mobile">{recipe.name}</h1>
                         <div className="view-recipe-rating-mobile">
-                            ★★★★☆
+                            {this.makeStars(recipe.rating)}
                         </div>
+                        <h2 className="view-recipe-preparation-time-mobile">
+                            {recipe.preparation_time + recipe.preparation_unit.slice(0, 3)}
+                        </h2>
                         <h2 className="view-recipe-ingredients-header">Ingredients</h2>
                         <ul className="view-recipe-ingredients">
-                            <li>Sapporo Ichiban Shrimp Noodle Soup 3.5 oz</li>
-                            <li>1 Large Egg</li>
-                            <li>1/2 cup of water</li>
-                            <li>1 or 2 slice(s) of cheese of your choice</li>
+                            {this.makeIngredientsList(recipe.ingredients)}
                         </ul>
                         <h2>Instructions</h2>
                         <ol className="view-recipe-instructions">
-                            <li>
-                                Boil water in a frying pan.
-                            </li>
-                            <li>
-                                Add the noodle
-                            </li>
-                            <li>
-                                Once the noodels are soft, add the half of soup base from the noodle package. Stir until mixed. 
-                            </li>
-                            <li>
-                                Create a hole in middle of the noodle, add an egg in the hole you just made, and close the lid.
-                            </li>
-                            <li>
-                                Once the egg is half cooked, place the cheese. Close the lid, and let it sit for 1 more minute.
-                            </li>
-                            <li>
-                                Mix and enjoy
-                            </li>
+                            {this.makeStepsList(recipe.steps)}
                         </ol>
                     </div>
 
                     <div className="view-recipe-rate-and-edit">
-                        <p>Edit</p>
+                        <Link 
+                            to={`/edit-recipe/${recipe.id}`}
+                            className="view-recipe-edit">
+                            Edit
+                        </Link>
                         <p>
                             <label className="view-recipe-rate">Rate this recipe</label>
                             <span className="view-recipe-stars">☆☆☆☆☆</span>

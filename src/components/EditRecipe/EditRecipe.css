@@ -1,0 +1,111 @@
+.edit-recipe{
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+    text-align: center;
+}
+
+.edit-recipe-heading{
+    font-size: 5vw;
+    margin-top: 2%;
+}
+
+.edit-recipe-form{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+}
+
+.edit-recipe-label{
+    display: block;
+    font-size: 4.5vw;
+    margin-top: 1vw;
+    margin-bottom: 2%;
+}
+
+.edit-recipe-input{
+    width: 80%;
+    margin-bottom: 5%;
+    font-size: 4.5vw;
+    max-width: 500px;
+}
+
+.edit-recipe-ingredients-and-steps{
+    width: 100%;
+    font-size: 3vw;
+}
+
+.edit-recipe-ingredients-and-steps > *{
+    font-size: 3vw;
+}
+
+.edit-recipe-button-and-text{
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-recipe-variable-input{
+    width: 80.3%;
+    font-size: 4vw;
+}
+
+.edit-recipe-plus{
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    left: 0;
+}
+
+.edit-recipe-minus{
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    right: 0;
+}
+
+.edit-recipe-submit{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 25%;
+}
+
+@media screen and (min-width: 1000px) {
+
+    .edit-recipe-ingredients-and-steps{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .edit-recipe-label{
+        display: block;
+        font-size: 3.5vw;
+        margin-top: 1vw;
+    }
+
+    .edit-recipe-input{
+        font-size: 3vw;
+    }
+
+    .edit-recipe-submit{
+        height: 3vw;
+    }
+
+    .edit-recipe-variable-input{
+        font-size: 3vw;
+    }
+
+}

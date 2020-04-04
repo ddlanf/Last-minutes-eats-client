@@ -70,9 +70,13 @@
 
 .view-all-recipes-image-box{
     max-width: 20%;
+    min-width: 20%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
     display: flex;
-    justify-content: start;
-    align-items: center;
+    justify-content: end;
+    align-items: flex-start;
     text-align: center;
 }
 

@@ -4,8 +4,11 @@ import { Route, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import LandingPage from '../LandingPage/LandingPage'
 import SignUp from '../SignUp/SignUp'
+import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import ViewAllRecipes from '../ViewAllRecipes/ViewAllRecipes'
 import ViewRecipe from '../ViewRecipe/ViewRecipe'
+import EditRecipe from '../EditRecipe/EditRecipe'
+import MakeRecipe from '../MakeRecipe/MakeRecipe'
 
 function App() {
   return (
@@ -34,6 +37,24 @@ function App() {
               exact
               path={'/view-recipe/:recipeId'}
               component={ViewRecipe}
+            />
+            <Route
+              exact
+              path={'/edit-recipe/:recipeId'}
+              component={EditRecipe}
+            />
+             <Route
+              exact
+              path={'/make-recipe'}
+              component={MakeRecipe}
+            />
+            <Route
+              exact
+              path={'/'}
+              component={MakeRecipe}
+            />
+            <Route
+              component={NotFoundPage}
             />
           </Switch>
         </main>

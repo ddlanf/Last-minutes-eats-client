@@ -1,0 +1,9 @@
+{
+    "version": 1,
+    "name": "last-minute-eats",
+    "alias": "last-minute-eats",
+    "routes": [
+        { "handle": "filesystem" },
+        { "src": "/.*", "dest": "/index.html" }
+    ]
+  }
