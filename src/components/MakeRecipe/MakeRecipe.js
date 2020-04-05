@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import './MakeRecipe.css'
 
 export default class MakeRecipe extends Component {
+
+    goBack = () =>{
+        this.props.history.push(`/view-all-recipes`)
+    }
+
     render() {
         return (
             <>
@@ -29,6 +34,11 @@ export default class MakeRecipe extends Component {
                                 </div>
                         </div>
                         <button className="make-recipe-submit">Submit</button>
+                        <button 
+                            onClick={this.goBack}
+                            className="edit-recipe-submit"
+                            >Back
+                        </button>
                     </form>
                 </section>   
             </>

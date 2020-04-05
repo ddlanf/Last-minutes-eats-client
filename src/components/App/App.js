@@ -49,11 +49,6 @@ function App() {
               component={MakeRecipe}
             />
             <Route
-              exact
-              path={'/'}
-              component={MakeRecipe}
-            />
-            <Route
               component={NotFoundPage}
             />
           </Switch>

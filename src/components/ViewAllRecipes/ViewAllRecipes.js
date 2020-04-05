@@ -50,7 +50,7 @@ export default class ViewAllRecipes extends Component {
     }
     
     render() {
-        console.log(recipes)
+       
         return (
             <>
                <section className="view-all-recipes-logo">

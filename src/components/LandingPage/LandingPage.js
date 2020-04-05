@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './LandingPage.css'
 
 export default class LandingPage extends Component {
@@ -7,7 +8,7 @@ export default class LandingPage extends Component {
         return (
             <>
                 <section className="landing-page-hero">
-                    Hero 
+                    <Link to="/view-all-recipes">Click Here to get started</Link>
                 </section>
 
                 <section className="landing-page-heading first">

@@ -4,10 +4,6 @@ import recipes from '../dummyData'
 import './ViewRecipe.css'
 
 class ViewRecipe extends Component {
-    
-   
-        
-    
 
     makeStars(numberOfStars){
         const stars = []
@@ -32,6 +28,10 @@ class ViewRecipe extends Component {
         return steps.map((step, index)=>{
             return <li key={index}>{step}</li>
         })
+    }
+
+    goBack = () =>{
+        this.props.history.push(`/view-all-recipes`)
     }
 
     render() {
@@ -86,6 +86,12 @@ class ViewRecipe extends Component {
                             <span className="view-recipe-stars">☆☆☆☆☆</span>
                         </p>
                     </div>
+                    <button
+                        className="view-recipe-back"
+                        onClick={this.goBack}
+                        >
+                        Back
+                    </button>
                 </section>  
             </>
         )
