@@ -34,9 +34,6 @@ class ViewRecipe extends Component {
         })
     }
 
-    goBack = () =>{
-        this.props.history.push(`/view-all-recipes`)
-    }
 
     makeStars(numberOfStars){
         const stars = []
@@ -105,6 +102,22 @@ class ViewRecipe extends Component {
                         <h2 className="view-recipe-preparation-time-desktop">
                             {recipe.preparation_time + recipe.preparation_time_unit.slice(0, 3)}
                         </h2>
+                        <div className="view-recipe-star-box-desktop">
+                            <label className="view-recipe-rate">
+                            {this.state.submitted ? "Your rating" : "Rate this recipe"}</label>
+                            <span className="view-recipe-stars">
+                            <StarRatingComponent 
+                                name="rate" 
+                                starCount={5}
+                                starColor={"black"}
+                                emptyStarColor={"grey"}
+                                value={this.state.rating}
+                                editing={!this.state.submitted}
+                                onStarClick={this.onStarClick.bind(this)}
+                                onStarHover={this.onStarHover.bind(this)}
+                            />
+                            </span>
+                        </div>
                     </div>
                     
                     <div className="view-recipe-main-detail">
@@ -124,15 +137,9 @@ class ViewRecipe extends Component {
                             {this.makeStepsList(recipe.steps)}
                         </ol>
                     </div>
-
-                    <div className="view-recipe-rate-and-edit">
-                        <Link 
-                            to={`/edit-recipe/${recipe.id}`}
-                            className="view-recipe-edit">
-                            Edit
-                        </Link>
-                        <div>
-                            <label className="view-recipe-rate">Rate this recipe</label>
+                    <div className="view-recipe-star-box-mobile">
+                            <label className="view-recipe-rate">
+                            {this.state.submitted ? "Your rating" : "Rate this recipe"}</label>
                             <span className="view-recipe-stars">
                             <StarRatingComponent 
                                 name="rate" 
@@ -145,14 +152,20 @@ class ViewRecipe extends Component {
                                 onStarHover={this.onStarHover.bind(this)}
                             />
                             </span>
-                        </div>
                     </div>
-                    <button
-                        className="view-recipe-back"
-                        onClick={this.goBack}
-                        >
-                        Back
-                    </button>
+                    <div className="view-recipe-back-and-edit">
+                        <Link
+                            to="/view-all-recipes"
+                            className="view-recipe-back"
+                            >
+                            Back
+                        </Link>
+                        <Link 
+                            to={`/edit-recipe/${recipe.id}`}
+                            className="view-recipe-edit">
+                            Edit
+                        </Link>
+                    </div>
                 </section>  
             </>
         )
