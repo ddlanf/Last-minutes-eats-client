@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
+import RecipesApiService from '../../services/recipes-api-service'
+import RecipeContext from '../../contexts/RecipeContext'
 import './MakeRecipe.css'
 
 export default class MakeRecipe extends Component {
+
+    static contextType = RecipeContext
 
     constructor(props){
         super(props)
         this.state = {
             recipe_name: '',
-            Image:'',
-            preparation_time: null,
+            image:'',
+            preparation_time: '',
             preparation_time_unit: 'minutes',
             ingredients: [
                 { value: '', display: true  },
@@ -25,7 +29,10 @@ export default class MakeRecipe extends Component {
                 { value: '', display: false },
                 { value: '', display: false },
                 { value: '', display: false },
-            ]
+            ],
+            changed: false,
+            error : '',
+            buffer: false
         }
     }
 
@@ -41,7 +48,8 @@ export default class MakeRecipe extends Component {
         const { value } = event.target
         
         this.setState({
-             [name] : value 
+             [name] : value,
+             changed : true
         })
 
     }
@@ -51,12 +59,16 @@ export default class MakeRecipe extends Component {
         currentInputs[index].value = event.target.value
         
         this.setState({
-            input: currentInputs
+            input: currentInputs,
+            changed : true
         })
     }   
 
     handleSelectChange = (event) =>{
-        this.setState({ preparation_time_unit : event.value});
+        this.setState({ 
+            preparation_time_unit : event.value,
+            changed: true
+        });
     }
 
     makeIngredientslist(){
@@ -68,6 +80,7 @@ export default class MakeRecipe extends Component {
                     className="make-recipe-button-and-text">
                     {(index !== 4) ?
                         <button 
+                            type="button"
                             style={{display: 
                                 this.state.ingredients[index + 1].display ? 'none' :  'block'}}
                             onClick={() => this.addAnother('ingredients', index)}
@@ -158,9 +171,53 @@ export default class MakeRecipe extends Component {
     postRecipe = (e) =>{
         e.preventDefault()
 
+        let validRecipe = true
         const { recipe_name, image, preparation_time, preparation_time_unit } = this.state
-        const ingredients = this.state.ingredients.filter(item => item.display).map(item => item.value)
-        console.log(ingredients)
+        const newRecipe = { recipe_name, image, preparation_time, preparation_time_unit }
+
+        console.log(newRecipe)
+        for(let [key, value] of Object.entries(newRecipe)){
+            if(value === ""){
+               this.setState({error : `Please enter ${key.replace('_', ' ')}`, changed: false})
+               validRecipe = false;
+            }
+        }
+
+        const ingredients = this.state.ingredients.filter(item => item.display).map(item => item.value).filter(item=> !!item)
+        const steps = this.state.steps.filter(item => item.display).map(item => item.value).filter(item=> !!item)
+    
+        if(!ingredients.length){
+            this.setState({error : `Please enter ingredients`, changed: false})
+            validRecipe = false;
+        }
+
+        if(!steps.length){
+            this.setState({error : `Please enter instructions`, changed: false})
+            validRecipe = false;
+        }
+
+        newRecipe.ingredients = ingredients
+        newRecipe.steps = steps
+
+        this.setState({ buffer : true })
+
+        if(validRecipe){
+            RecipesApiService.postRecipe(newRecipe)
+                .then(recipe =>{
+                    RecipesApiService.getRecipes()
+                    .then(recipes => {
+
+                        this.context.setRecipes(recipes)
+                    })
+                    .catch(res=>{ 
+                            this.context.setError(res.error)})
+                })
+                .then(()=>{
+                    this.props.history.push('view-all-recipes')
+                })
+                .catch(res => {this.setState({ error: res.error, buffer: false})})
+        }
+        else{  this.setState({ buffer : false }) }
     }
 
     render() {
@@ -181,6 +238,7 @@ export default class MakeRecipe extends Component {
                         <input 
                             className="make-recipe-input" 
                             type="text"
+                            name="image"
                             onChange={this.handleInputChange}/>
                         <div className="make-recipe-ingredients-and-steps">
                                 <div className="make-recipe-ingredients-input">
@@ -207,8 +265,12 @@ export default class MakeRecipe extends Component {
                                 <option value="minutes">min</option>
                             </select>
                         </div>
+                        {this.state.buffer ? <p className="make-recipe-buffer">Uploading please wait</p> :
+                            this.state.error ? <p className="make-recipe-error">{this.state.error}</p> : ''}
                         <button
                             type="submit" 
+                            name="submit"
+                            disabled={!this.state.changed}
                             className="make-recipe-submit">
                             Submit
                         </button>

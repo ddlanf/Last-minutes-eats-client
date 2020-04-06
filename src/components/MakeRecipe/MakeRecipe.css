@@ -111,6 +111,16 @@
     height: 6vw;
 }
 
+.make-recipe-error{
+    font-size: 4.5vw;
+    color: red;
+}
+
+.make-recipe-buffer{
+    font-size: 4.5vw;
+    color: black;
+}
+
 @media screen and (min-width: 1000px) {
 
     .make-recipe-ingredients-and-steps{

@@ -34,7 +34,9 @@ const RecipeApiService = {
     editRecipe(recipeId, recipeToUpdate) {
       return fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
         method: 'PATCH',
-        headers: { 'content-type': 'application/json' },
+        headers: { 
+            'content-type': 'application/json'
+        },
         body: JSON.stringify({
           ...recipeToUpdate
         }),
