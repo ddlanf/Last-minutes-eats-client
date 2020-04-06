@@ -3,6 +3,7 @@
 //preparetion units "seconds" or "minutes"
 //rating no more than 4
 
+
 const recipes = [
     {
         id: 1,
@@ -128,5 +129,6 @@ const recipes = [
         image: "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/tips/e204296536bb4d30ba25a5bd739c09ba.jpeg?output-quality=auto&downsize=800:*"
     }
 ]
+
 
 module.exports = recipes

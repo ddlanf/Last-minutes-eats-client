@@ -68,6 +68,14 @@
     justify-content: space-around;
 }
 
+.view-all-recipes-rating{
+    width: 30%
+}
+
+.view-all-recipes-star{
+    font-size: 2vw;
+}
+
 .view-all-recipes-image-box{
     max-width: 20%;
     min-width: 20%;
@@ -93,6 +101,8 @@ a.view-all-recipes-link{
     color: black;
     text-decoration: none;
 }
+
+
 
 @media screen and (min-width: 1000px) {
 

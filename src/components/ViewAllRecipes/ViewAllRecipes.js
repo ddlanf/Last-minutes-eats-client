@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import './ViewAllRecipes.css'
-import recipes from '../dummyData'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
+import RecipesApiService from '../../services/recipes-api-service'
+import RecipeContext from '../../contexts/RecipeContext'
 
 export default class ViewAllRecipes extends Component {
 
+    static contextType = RecipeContext
+    
     renderRecipes(){
+        const { recipes } = this.context
         const allRecipes = recipes.map(recipe =>{
             return (
                     <li
@@ -16,10 +21,10 @@ export default class ViewAllRecipes extends Component {
                             to={`/view-recipe/${recipe.id}`}>
                             <div className="view-all-recipes-recipe">
                                 <div className="view-all-recipes-recipe-box"> 
-                                    <p className="view-all-recipes-rating">{this.makeStars(recipe.rating)}</p>
-                                    <h3 className="view-all-recipes-recipe-name">{recipe.name}</h3>
+                                    <p className="view-all-recipes-rating">{this.makeStars(recipe.overall_rating)}</p>
+                                    <h3 className="view-all-recipes-recipe-name">{recipe.recipe_name}</h3>
                                     <div className="view-all-recipes-recipe-details">
-                                        <p className="view-all-recipes-preparation-time">{recipe.preparation_time}{recipe.preparation_unit}</p>
+                                        <p className="view-all-recipes-preparation-time">{recipe.preparation_time}{recipe.preparation_time_unit.slice(0, 3)}</p>
                                         <p className="view-all-recipes-amount-of-steps">{recipe.steps.length} steps</p>
                                         <p className="view-all-recipes-amount-of-ingredients">{recipe.ingredients.length} ingredients</p>
                                     </div>
@@ -38,15 +43,28 @@ export default class ViewAllRecipes extends Component {
 
     makeStars(numberOfStars){
         const stars = []
+        
+        for(let i = 1; i < 6; i++){
 
-        for(let i = 0; i < 5; i++){
-            if(i >= numberOfStars){
-                stars.push('☆')
+            if(numberOfStars < i  && numberOfStars < i - 0.75){
+                stars.push((<FontAwesomeIcon key={i} className="view-all-recipes-star" icon={['far', 'star']}/>))
             }
-            else{ stars.push('★') }
+            else if(numberOfStars >= i - 0.75 && numberOfStars <= i - 0.5){
+                stars.push((<FontAwesomeIcon key={i} className="view-all-recipes-star" icon="star-half-alt"/>))
+            }
+            else if(numberOfStars > i - 0.5 && numberOfStars < i - 0.25){
+                stars.push((<FontAwesomeIcon key={i} className="view-all-recipes-star" icon="star-half-alt"/>))
+            }
+            else{  stars.push((<FontAwesomeIcon  key={i} className="view-all-recipes-star" icon={['fas', 'star']}/>))  }
         }
 
-        return stars.join('')
+        return stars
+    }
+
+    componentDidMount(){
+        RecipesApiService.getRecipes()
+            .then(recipes => { this.context.setRecipes(recipes)})
+            .catch(res=>{ this.context.setError(res.error)})
     }
     
     render() {

@@ -97,7 +97,7 @@ class EditRecipe extends Component {
         return inputFields
     }
 
-    goBack(id){
+    goBack = (id) => {
         this.props.history.push(`/view-recipe/${id}`)
     }
 

@@ -1,13 +1,34 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import "./Nav.css"
 
-export default class Nav extends Component {
+class Nav extends Component {
+
+    rendorRightNavBar(){
+        const rightNavBar = 
+        ['view-all-recipes', 'view-recipe/:recipeId', 'edit-recipe/:recipeId', 'make-recipe']
+        .map(path =>{
+           
+           return(  
+                    <Route
+                         exact key={path} path={`/${path}`}>
+                        <Link className="nav-bar-right-nav-link" to="make-recipe">Make Recipe</Link>
+                    </Route>);
+        })
+
+        rightNavBar.push(
+            (<Route
+                exact key={'/'} path={`/`}>
+                {this.props.hasEmailToken ?
+                    '': <Link className="nav-bar-right-nav-link" to="/signup">Sign Up</Link>}
+            </Route>)
+        )
+
+        return rightNavBar
+    }
+
 
     render() {
-
-        //for now
-        const landingPage = !true;
 
         return (
             <nav className="nav-bar">
@@ -20,11 +41,12 @@ export default class Nav extends Component {
                     </Link>
                 </div>
                 <div className="nav-bar-right-nav">
-                    {landingPage ? 
-                        <Link className="nav-bar-right-nav-link" to="/signup">Sign Up</Link> : 
-                        <Link className="nav-bar-right-nav-link" to="make-recipe">Make Recipe</Link>}
+                    {this.rendorRightNavBar()}
                 </div>
             </nav>
         )
     }
 }
+
+
+export default Nav

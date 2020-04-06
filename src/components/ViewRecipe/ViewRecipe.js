@@ -1,22 +1,26 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import recipes from '../dummyData'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import RecipesApiService from '../../services/recipes-api-service'
+import RecipeContext from '../../contexts/RecipeContext'
+import StarRatingComponent from 'react-star-rating-component';
+import RatingApiService from '../../services/ratings-api-service'
+import TokenService from '../../services/token-service'
 import './ViewRecipe.css'
 
 class ViewRecipe extends Component {
 
-    makeStars(numberOfStars){
-        const stars = []
+    static contextType = RecipeContext
 
-        for(let i = 0; i < 5; i++){
-            if(i >= numberOfStars){
-                stars.push('☆')
-            }
-            else{ stars.push('★') }
+   constructor(props){
+       super(props)
+       const { recipeId } = this.props.match.params;
+       const ratingToken = TokenService.getRatingToken(recipeId)
+        this.state = {
+            submitted: !!ratingToken,
+            rating: !!ratingToken ? parseInt(ratingToken) : 0
         }
-
-        return stars.join('')
-    }
+   }
 
     makeIngredientsList(ingredients){
         return ingredients.map((ingredient, index) =>{
@@ -34,9 +38,55 @@ class ViewRecipe extends Component {
         this.props.history.push(`/view-all-recipes`)
     }
 
-    render() {
+    makeStars(numberOfStars){
+        const stars = []
+        
+        for(let i = 1; i < 6; i++){
+
+            if(numberOfStars < i  && numberOfStars < i - 0.75){
+                stars.push((<FontAwesomeIcon key={i} className="view-recipe-star" icon={['far', 'star']}/>))
+            }
+            else if(numberOfStars >= i - 0.75 && numberOfStars <= i - 0.5){
+                stars.push((<FontAwesomeIcon key={i} className="view-recipe-star" icon="star-half-alt"/>))
+            }
+            else if(numberOfStars > i - 0.5 && numberOfStars < i - 0.25){
+                stars.push((<FontAwesomeIcon key={i} className="view-recipe-star" icon="star-half-alt"/>))
+            }
+            else{  stars.push((<FontAwesomeIcon  key={i} className="view-recipe-star" icon={['fas', 'star']}/>))  }
+        }
+
+        return stars
+    }
+
+    onStarHover(nextValue){
+        this.setState({rating: nextValue});
+    }
+
+    onStarClick(nextValue) {
+        this.setState({ submitted: true })
         const { recipeId } = this.props.match.params;
-        const recipe = recipes.filter(recipe => recipe.id === parseInt(recipeId))[0]
+        const newRating = { rating : nextValue }
+        
+        RatingApiService.postRating(newRating, recipeId)
+           .then(newRating => { TokenService.saveRatingToken(recipeId, newRating.rating) })
+           .catch(res =>{ this.context.setError(res.error)})
+    }
+
+    componentDidMount(){
+        const { recipeId } = this.props.match.params;
+
+        RecipesApiService.getRecipe(recipeId)
+            .then(recipe =>{
+                this.context.setRecipe(recipe)
+            })
+            .catch(res => {this.context.setError(res.error)})
+    }
+
+    render() {
+        
+        const defaultRecipe = { steps: [], ingredients: [], preparation_time_unit: ''}
+
+        const recipe = this.context.recipe.recipe_name ? this.context.recipe : defaultRecipe 
      
         return (
             <>
@@ -45,25 +95,25 @@ class ViewRecipe extends Component {
                 </section>
                 <section className="view-recipe-recipe">
                     <div className="view-recipe-main">
-                        <h1 className="view-recipe-recipe-name-desktop">{recipe.name}</h1>
+                        <h1 className="view-recipe-recipe-name-desktop">{recipe.recipe_name}</h1>
                         <div className="view-recipe-rating-desktop">
-                          {this.makeStars(recipe.rating)}
+                          {this.makeStars(recipe.overall_rating)}
                         </div>
                         <div className="view-recipe-image-box"> 
-                            <img className="view-recipe-image" alt={recipe.name} src={recipe.image} />
+                            <img className="view-recipe-image" alt={recipe.recipe_name} src={recipe.image} />
                         </div>
                         <h2 className="view-recipe-preparation-time-desktop">
-                            {recipe.preparation_time + recipe.preparation_unit.slice(0, 3)}
+                            {recipe.preparation_time + recipe.preparation_time_unit.slice(0, 3)}
                         </h2>
                     </div>
                     
                     <div className="view-recipe-main-detail">
-                        <h1 className="view-recipe-recipe-name-mobile">{recipe.name}</h1>
+                        <h1 className="view-recipe-recipe-name-mobile">{recipe.recipe_name}</h1>
                         <div className="view-recipe-rating-mobile">
-                            {this.makeStars(recipe.rating)}
+                            {this.makeStars(recipe.overall_rating)}
                         </div>
                         <h2 className="view-recipe-preparation-time-mobile">
-                            {recipe.preparation_time + recipe.preparation_unit.slice(0, 3)}
+                            {recipe.preparation_time + recipe.preparation_time_unit.slice(0, 3)}
                         </h2>
                         <h2 className="view-recipe-ingredients-header">Ingredients</h2>
                         <ul className="view-recipe-ingredients">
@@ -81,10 +131,21 @@ class ViewRecipe extends Component {
                             className="view-recipe-edit">
                             Edit
                         </Link>
-                        <p>
+                        <div>
                             <label className="view-recipe-rate">Rate this recipe</label>
-                            <span className="view-recipe-stars">☆☆☆☆☆</span>
-                        </p>
+                            <span className="view-recipe-stars">
+                            <StarRatingComponent 
+                                name="rate" 
+                                starCount={5}
+                                starColor={"black"}
+                                emptyStarColor={"grey"}
+                                value={this.state.rating}
+                                editing={!this.state.submitted}
+                                onStarClick={this.onStarClick.bind(this)}
+                                onStarHover={this.onStarHover.bind(this)}
+                            />
+                            </span>
+                        </div>
                     </div>
                     <button
                         className="view-recipe-back"
