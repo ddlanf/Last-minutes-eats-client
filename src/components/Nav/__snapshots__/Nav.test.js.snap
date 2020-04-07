@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Make component renders the UI as expected 1`] = `
+<nav
+  className="nav-bar"
+>
+  <div
+    className="nav-bar-left-nav"
+  >
+    <a
+      className="nav-bar-left-nav-link"
+      href="/view-all-recipes"
+      onClick={[Function]}
+    >
+      Last Minute Eats
+    </a>
+  </div>
+  <div
+    className="nav-bar-right-nav"
+  >
+    <a
+      className="nav-bar-right-nav-link"
+      href="/signup"
+      onClick={[Function]}
+    >
+      Sign Up
+    </a>
+  </div>
+</nav>
+`;

@@ -99,15 +99,6 @@ a.view-recipe-edit, a.view-recipe-back{
     display: none;
 }
 
-.view-recipe-rate{
-    display: block;
-    font-size: 5vw;
-}
-
-.view-recipe-stars{
-    font-size: 10vw;
-    width: 100%;
-}
 
 @media screen and (min-width: 1000px) {
 
@@ -191,17 +182,8 @@ a.view-recipe-edit, a.view-recipe-back{
     .view-recipe-star-box-desktop{
         display: block;
         margin-top: 0;
-    }
-
-    .view-recipe-rate{
-        display: block;
-        font-size: 2vw;
-    }
-    
-    .view-recipe-stars{
-        font-size: 5vw;
-        margin-top: 0;
-    }
+    }  
+   
 }
 
 @media screen and (min-width: 1500px) {

@@ -15,7 +15,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { faStar as fasStar, faStarHalfAlt} from '@fortawesome/free-solid-svg-icons';
- 
+import Star from '../ViewRecipe/StarRating/StarRating'
 library.add(farStar, fasStar, fab, faStarHalfAlt)
 
 export default class App extends Component {
@@ -75,6 +75,10 @@ export default class App extends Component {
                   exact
                   path={'/make-recipe'}
                   component={MakeRecipe}
+                />
+                <Route
+                  exact path={'/star'}
+                  component={Star}
                 />
                 <Route
                   component={NotFoundPage}

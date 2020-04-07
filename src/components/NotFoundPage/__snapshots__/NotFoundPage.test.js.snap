@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Make component renders the UI as expected 1`] = `
+<div>
+  <h1
+    className="no-page-found"
+  >
+    No page found
+  </h1>
+</div>
+`;

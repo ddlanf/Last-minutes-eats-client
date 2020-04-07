@@ -1,0 +1,28 @@
+.star-rating{
+    display: inline;
+    font-size: 9vw;
+    z-index: 7;
+}
+
+.view-recipe-rate{
+    display: block;
+    font-size: 5vw;
+}
+
+.view-recipe-stars{
+    width: 100%;
+    display: block;
+}
+
+@media screen and (min-width: 1000px) {
+
+    .view-recipe-rate{
+        display: block;
+        font-size: 3vw;
+    }
+
+    .star-rating{
+        display: inline;
+        font-size: 3.7vw;
+    }
+}

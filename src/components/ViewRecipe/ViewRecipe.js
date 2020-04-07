@@ -3,24 +3,14 @@ import { Link, withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RecipesApiService from '../../services/recipes-api-service'
 import RecipeContext from '../../contexts/RecipeContext'
-import StarRatingComponent from 'react-star-rating-component';
 import RatingApiService from '../../services/ratings-api-service'
 import TokenService from '../../services/token-service'
+import StarRating from './StarRating/StarRating'
 import './ViewRecipe.css'
 
 class ViewRecipe extends Component {
 
     static contextType = RecipeContext
-
-   constructor(props){
-       super(props)
-       const { recipeId } = this.props.match.params;
-       const ratingToken = TokenService.getRatingToken(recipeId)
-        this.state = {
-            submitted: !!ratingToken,
-            rating: !!ratingToken ? parseInt(ratingToken) : 0
-        }
-   }
 
     makeIngredientsList(ingredients){
         return ingredients.map((ingredient, index) =>{
@@ -55,20 +45,6 @@ class ViewRecipe extends Component {
         return stars
     }
 
-    onStarHover(nextValue){
-        this.setState({rating: nextValue});
-    }
-
-    onStarClick(nextValue) {
-        this.setState({ submitted: true })
-        const { recipeId } = this.props.match.params;
-        const newRating = { rating : nextValue }
-        
-        RatingApiService.postRating(newRating, recipeId)
-           .then(newRating => { TokenService.saveRatingToken(recipeId, newRating.rating) })
-           .catch(res =>{ this.context.setError(res.error)})
-    }
-
     componentDidMount(){
         const { recipeId } = this.props.match.params;
 
@@ -85,6 +61,8 @@ class ViewRecipe extends Component {
 
         const recipe = this.context.recipe.recipe_name ? this.context.recipe : defaultRecipe 
      
+        const { recipeId } = this.props.match.params;
+
         return (
             <>
                 <section className="view-recipe-logo">
@@ -103,20 +81,7 @@ class ViewRecipe extends Component {
                             {recipe.preparation_time + recipe.preparation_time_unit.slice(0, 3)}
                         </h2>
                         <div className="view-recipe-star-box-desktop">
-                            <label className="view-recipe-rate">
-                            {this.state.submitted ? "Your rating" : "Rate this recipe"}</label>
-                            <span className="view-recipe-stars">
-                            <StarRatingComponent 
-                                name="rate" 
-                                starCount={5}
-                                starColor={"black"}
-                                emptyStarColor={"grey"}
-                                value={this.state.rating}
-                                editing={!this.state.submitted}
-                                onStarClick={this.onStarClick.bind(this)}
-                                onStarHover={this.onStarHover.bind(this)}
-                            />
-                            </span>
+                            <StarRating recipeId={recipeId}/>
                         </div>
                     </div>
                     
@@ -138,20 +103,7 @@ class ViewRecipe extends Component {
                         </ol>
                     </div>
                     <div className="view-recipe-star-box-mobile">
-                            <label className="view-recipe-rate">
-                            {this.state.submitted ? "Your rating" : "Rate this recipe"}</label>
-                            <span className="view-recipe-stars">
-                            <StarRatingComponent 
-                                name="rate" 
-                                starCount={5}
-                                starColor={"black"}
-                                emptyStarColor={"grey"}
-                                value={this.state.rating}
-                                editing={!this.state.submitted}
-                                onStarClick={this.onStarClick.bind(this)}
-                                onStarHover={this.onStarHover.bind(this)}
-                            />
-                            </span>
+                        <StarRating recipeId={recipeId}/>
                     </div>
                     <div className="view-recipe-back-and-edit">
                         <Link

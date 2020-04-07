@@ -1,25 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ViewRecipe from './ViewRecipe';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom'
+ 
+export function FontAwesomeIcon(props) {
+    return <i className="fa"/>
+}
 
-describe('App component', () => {
-    
+describe('Make component', () => {
+
 
     it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<BrowserRouter>
-                        <App />
+                        <ViewRecipe/>
                     </BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
     });
 
     it('renders the UI as expected', () => {
         const tree = renderer
-          .create(<BrowserRouter>
-                        <App />
-                    </BrowserRouter>)
+          .create(
+                <BrowserRouter>
+                    <ViewRecipe/>
+                </BrowserRouter>)
           .toJSON();
         expect(tree).toMatchSnapshot();  
       });

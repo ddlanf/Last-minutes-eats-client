@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Make component renders the UI as expected 1`] = `
+Array [
+  <label
+    className="view-recipe-rate"
+  >
+    Your rating
+  </label>,
+  <span
+    className="view-recipe-stars"
+  >
+    <div
+      className="star-rating"
+    >
+      <i
+        className="fa"
+      />
+      <i
+        className="fa"
+      />
+    </div>
+    <div
+      className="star-rating"
+    >
+      <i
+        className="fa"
+      />
+      <i
+        className="fa"
+      />
+    </div>
+    <div
+      className="star-rating"
+    >
+      <i
+        className="fa"
+      />
+      <i
+        className="fa"
+      />
+    </div>
+    <div
+      className="star-rating"
+    >
+      <i
+        className="fa"
+      />
+      <i
+        className="fa"
+      />
+    </div>
+    <div
+      className="star-rating"
+    >
+      <i
+        className="fa"
+      />
+      <i
+        className="fa"
+      />
+    </div>
+  </span>,
+]
+`;
