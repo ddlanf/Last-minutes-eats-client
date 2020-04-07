@@ -3,8 +3,6 @@ import { Link, withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RecipesApiService from '../../services/recipes-api-service'
 import RecipeContext from '../../contexts/RecipeContext'
-import RatingApiService from '../../services/ratings-api-service'
-import TokenService from '../../services/token-service'
 import StarRating from './StarRating/StarRating'
 import './ViewRecipe.css'
 

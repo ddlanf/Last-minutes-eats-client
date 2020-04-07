@@ -6,13 +6,13 @@ class Nav extends Component {
 
     rendorRightNavBar(){
         const rightNavBar = 
-        ['view-all-recipes', 'view-recipe/:recipeId', 'edit-recipe/:recipeId', 'make-recipe']
+        ['view-all-recipes', 'view-recipe/:recipeId', 'edit-recipe/:recipeId']
         .map(path =>{
            
            return(  
                     <Route
                          exact key={path} path={`/${path}`}>
-                        <Link className="nav-bar-right-nav-link" to="make-recipe">Make Recipe</Link>
+                        <Link className="nav-bar-right-nav-link" to="/make-recipe">Make Recipe</Link>
                     </Route>);
         })
 

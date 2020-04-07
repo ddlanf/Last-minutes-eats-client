@@ -175,7 +175,6 @@ export default class MakeRecipe extends Component {
         const { recipe_name, image, preparation_time, preparation_time_unit } = this.state
         const newRecipe = { recipe_name, image, preparation_time, preparation_time_unit }
 
-        console.log(newRecipe)
         for(let [key, value] of Object.entries(newRecipe)){
             if(value === ""){
                this.setState({error : `Please enter ${key.replace('_', ' ')}`, changed: false})
@@ -199,25 +198,23 @@ export default class MakeRecipe extends Component {
         newRecipe.ingredients = ingredients
         newRecipe.steps = steps
 
-        this.setState({ buffer : true })
-
         if(validRecipe){
+
+            this.setState({ buffer : true })
             RecipesApiService.postRecipe(newRecipe)
                 .then(recipe =>{
+                    
                     RecipesApiService.getRecipes()
                     .then(recipes => {
-
                         this.context.setRecipes(recipes)
+                        this.props.history.push('view-all-recipes')
                     })
                     .catch(res=>{ 
                             this.context.setError(res.error)})
                 })
-                .then(()=>{
-                    this.props.history.push('view-all-recipes')
-                })
                 .catch(res => {this.setState({ error: res.error, buffer: false})})
         }
-        else{  this.setState({ buffer : false }) }
+        else{ this.setState({ buffer : false }) }
     }
 
     render() {

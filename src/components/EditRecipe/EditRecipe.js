@@ -46,8 +46,6 @@ class EditRecipe extends Component {
 
     handleInputChange = (event) =>{
 
-        this.setState({ clicked: false })
-
         const { name } = event.target
         const { value } = event.target
         
@@ -207,28 +205,20 @@ class EditRecipe extends Component {
 
         const { recipeId } = this.props.match.params;
 
-        this.setState({ buffer : true })
-
         if(validRecipe){
-           RecipesApiService.editRecipe(recipeId, newRecipe,)
+           this.setState({ buffer : true })
+           RecipesApiService.editRecipe(recipeId, newRecipe)
                 .then(() =>{
                     RecipesApiService.getRecipes()
-                        .then(recipes => { this.context.setRecipes(recipes)})
+                        .then(recipes => { 
+                            this.context.setRecipes(recipes)
+                            this.props.history.push('/view-all-recipes')
+                        })
                         .catch(res=>{ this.context.setError(res.error)})
-                    this.props.history.push('/view-all-recipes')
                 })
                 .catch((res) => {
-                   
-
-                    if(this._isMounted && res.error){
+                        console.log("hello")
                         this.setState({ error: res.error, buffer: false })
-                    }
-                    else{
-                        RecipesApiService.getRecipes()
-                        .then(recipes => { this.context.setRecipes(recipes)})
-                        .catch(res=>{ this.context.setError(res.error)})
-                        this.props.history.push('/view-all-recipes')
-                    }
                 })
         }
         else{
