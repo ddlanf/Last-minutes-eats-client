@@ -127,7 +127,7 @@ export default class MakeRecipe extends Component {
                             +
                         </button>
                         : ''}
-                    <input 
+                    <textarea 
                         className="make-recipe-variable-input" 
                         type="text"
                         name={`step-${num}`}
@@ -225,27 +225,37 @@ export default class MakeRecipe extends Component {
                     <form className="make-recipe-form"
                         onSubmit={(e) => this.postRecipe(e)}
                         >
-                        <label className="make-recipe-label">Recipe Name</label>
-                        <input 
-                            className="make-recipe-input" 
-                            type="text"
-                            name="recipe_name"
-                            onChange={this.handleInputChange}/>
-                        <label className="make-recipe-label">Recipe Image Link</label>
-                        <input 
-                            className="make-recipe-input" 
-                            type="text"
-                            name="image"
-                            onChange={this.handleInputChange}/>
+                        <div className="make-recipe-top-field">
+                            <div className="make-recipe-name-field">
+                                <label className="make-recipe-label">Recipe Name</label>
+                                <input 
+                                    className="make-recipe-input" 
+                                    type="text"
+                                    name="recipe_name"
+                                    onChange={this.handleInputChange}/>
+                            </div>
+                            <div className="make-recipe-image-field">
+                                <label className="make-recipe-label">Recipe Image Link</label>
+                                <input 
+                                    className="make-recipe-input" 
+                                    type="text"
+                                    name="image"
+                                    onChange={this.handleInputChange}/>
+                            </div>
+                        </div>
                         <div className="make-recipe-ingredients-and-steps">
-                                <div className="make-recipe-ingredients-input">
-                                    <label className="make-recipe-label">Ingredients</label> 
-                                    {this.makeIngredientslist()}
-                                </div>
-                                <div className="make-recipe-instructions-input">
-                                    <label className="make-recipe-label">Instructions</label>
+                            <div className="make-recipe-instructions-field">
+                                <label className="make-recipe-label">Instructions</label>
+                                <div className="make-recipe-instructions-input-box">
                                     {this.makeInstructionlists()}
                                 </div>
+                            </div>
+                            <div className="make-recipe-ingredients-field">
+                                <label className="make-recipe-label">Ingredients</label> 
+                                <div className="make-recipe-ingredients-input-box">
+                                    {this.makeIngredientslist()}
+                                </div>
+                            </div>
                         </div>
                         <label className="make-recipe-preparation-time-label" >Preparation Time</label>
                         <div className="make-recipe-preparation-time-box">
@@ -274,7 +284,7 @@ export default class MakeRecipe extends Component {
                         <button 
                             type="button"
                             onClick={this.goBack}
-                            className="edit-recipe-submit"
+                            className="make-recipe-back"
                             >
                             Back
                         </button>

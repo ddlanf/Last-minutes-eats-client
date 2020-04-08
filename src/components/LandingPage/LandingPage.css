@@ -13,35 +13,37 @@
 }
 
 .landing-page-heading{
-    width: 90%;
-    border: 1px solid black;
-    background-color: lightgray;
+    width: 95%;
+    border-bottom: 1px black solid;
     margin-top: 5vw;
-    font-size: 2vw;
     text-align: center;
     padding-top: 2%;
-    padding-bottom: 2%;
     padding-left: 2%;
     padding-right: 2%;
 }
 
 .landing-page-heading-text{
     font-size: 4vw;
+    width: 100%;
+    font-size: 3.8vw;
 }
 
 .landing-page-heading-small-text{
-    font-size: 3.5vw;
+    font-size: 3.2vw;
+    line-height: normal;
+    margin-bottom: 2%;
 }
 
 .landing-page-my-info{
     width: 70%;
-    margin-top: 5vw;
+    margin-top: 1vw;
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
     padding-left: 2%;
     padding-right: 2%;
     margin-bottom: 3vw;
+    
 }
 
 .landing-page-my-name{
@@ -67,16 +69,48 @@
 
 @media screen and (min-width: 1000px){
 
+    .lading-page-top-sections{
+        margin-top: 4%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 90%;
+        text-align: center;
+        flex-wrap: nowrap;
+    }
+
+    .landing-page-hero{
+        border: 1px dotted black;
+        margin-right: 5%;
+        width: 100%;
+        height: 40vw;
+        font-size: 3vw;
+        padding-top: 18%;
+    }
+
+    
     .landing-page-heading{
-        width: 80%;
+        width: 100%;
+        border: none;
+        background-color: white;
+        border-bottom: 1px black solid;
+        margin: 0;
+        padding: 0;
     }
 
     .landing-page-heading-text{
-        width: 100%;
+        width: 105%;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 30px;
     }
 
     .landing-page-heading-small-text{
-        width: 90%;
+        font-size: 25px;
     }
     
     .landing-page-my-name{
@@ -95,11 +129,5 @@
         font-size: 1.5vw;
     }
 
-    .landing-page-heading-text{
-        font-size: 3vw;
-    }
-    
-    .landing-page-heading-small-text{
-        font-size: 2.5vw;
-    }
+
 }

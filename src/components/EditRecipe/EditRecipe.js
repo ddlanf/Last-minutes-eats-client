@@ -119,7 +119,7 @@ class EditRecipe extends Component {
                 <div 
                     key={num} 
                     style={{display: this.state.steps[index].display ? 'block' : 'none' }}
-                    className="edit-recipe-button-and-text">
+                    className="edit-recipe-button-and-text steps">
                      {(index !== 6) ?
                         <button 
                             type="button"
@@ -130,7 +130,7 @@ class EditRecipe extends Component {
                             +
                         </button>
                         : ''}
-                    <input 
+                    <textarea 
                         className="edit-recipe-variable-input" 
                         type="text"
                         name={`step-${num}`}
@@ -273,28 +273,38 @@ class EditRecipe extends Component {
                     <form className="edit-recipe-form"
                         onSubmit={(e) => this.editRecipe(e)}
                         >
-                        <label className="edit-recipe-label">Recipe Name</label>
-                        <input 
-                            className="edit-recipe-input" 
-                            type="text"
-                            name="recipe_name"
-                            defaultValue={this.state.recipe_name}
-                            onChange={this.handleInputChange}/>
-                        <label className="edit-recipe-label">Recipe Image Link</label>
-                        <input 
-                            className="edit-recipe-input" 
-                            type="text"
-                            name="image"
-                            defaultValue={this.state.image}
-                            onChange={this.handleInputChange}/>
+                        <div className="edit-recipe-top-field">
+                            <div className="edit-recipe-name-field">
+                                <label className="edit-recipe-label">Recipe Name</label>
+                                <input 
+                                    className="edit-recipe-input" 
+                                    type="text"
+                                    name="recipe_name"
+                                    defaultValue={this.state.recipe_name}
+                                    onChange={this.handleInputChange}/>
+                            </div>
+                            <div className="edit-recipe-image-field">
+                                <label className="edit-recipe-label">Recipe Image Link</label>
+                                <input 
+                                    className="edit-recipe-input" 
+                                    type="text"
+                                    name="image"
+                                    defaultValue={this.state.image}
+                                    onChange={this.handleInputChange}/>
+                            </div>
+                        </div>
                         <div className="edit-recipe-ingredients-and-steps">
-                                <div className="edit-recipe-ingredients-input">
-                                    <label className="edit-recipe-label">Ingredients</label> 
-                                    {this.editIngredientslist()}
-                                </div>
-                                <div className="edit-recipe-instructions-input">
+                                <div className="edit-recipe-instructions-field">
                                     <label className="edit-recipe-label">Instructions</label>
-                                    {this.editInstructionlists()}
+                                    <div className="edit-recipe-instructions-input-box">
+                                        {this.editInstructionlists()}
+                                    </div>
+                                </div>
+                                <div className="edit-recipe-ingredients-field">
+                                    <label className="edit-recipe-label">Ingredients</label> 
+                                    <div className="edit-recipe-ingredients-input-box">  
+                                        {this.editIngredientslist()}
+                                    </div>
                                 </div>
                         </div>
                         <label className="edit-recipe-preparation-time-label" >Preparation Time</label>
