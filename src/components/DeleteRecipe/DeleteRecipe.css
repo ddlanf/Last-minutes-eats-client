@@ -1,4 +1,4 @@
-.sign-up-form{ 
+.delete-recipe-form{ 
     margin-left: auto; 
     margin-right: auto; 
     display: block; 
@@ -14,33 +14,30 @@
     text-align: center; 
 }
 
-.sign-up-label{
+.delete-recipe-label{
     font-size: 7vw;
     margin-bottom: 2vw;
     display: block;
-    width: 55%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.sign-up-input{
+.delete-recipe-input{
     font-size: 6vw;
     width: 50%;
     max-width: 800px;
 }
 
-.sign-up-link{
+.delete-recipe-link{
     display: block;
     margin-top: 10%;
     font-size: 8vw;
 }
 
-a.sign-up-link{
+a.delete-recipe-link{
     color: black;
     text-decoration: none;
 }
 
-.sign-up-submit{
+.delete-recipe-submit{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -48,13 +45,13 @@ a.sign-up-link{
     font-size: 5vw;
 }
 
-.sign-up-error{
+.delete-recipe-error{
     color: red;
     font-size: 5vw;
     margin-top: 2%;
 }
 
-.sign-up-submitted{
+.delete-recipe-submitted{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -62,34 +59,34 @@ a.sign-up-link{
 }
 
 @media screen and (min-width: 1000px){
-    .sign-up-label{
+    .delete-recipe-label{
         font-size: 3vw;
         margin-bottom: 1%;
     }
 
-    .sign-up-input{
+    .delete-recipe-input{
         font-size: 4vw;
     }
 
-    .sign-up-link{
+    .delete-recipe-link{
         margin-top: 5%;
         font-size: 3vw;
     }
 
-    .sign-up-submit{
+    .delete-recipe-submit{
         font-size: 3vw;
         margin-top: 3%;
     }
 
-    .sign-up-form{
+    .delete-recipe-form{
         padding-top: 8%;
     }
 
-    .sign-up-error{
+    .delete-recipe-error{
         font-size: 3vw;
     }
 
-    .sign-up-submitted{
+    .delete-recipe-submitted{
         font-size:  3vw;
         width: 80%;
     }

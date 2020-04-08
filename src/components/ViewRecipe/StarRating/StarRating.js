@@ -12,9 +12,8 @@ export default class StarRating extends Component {
        super(props)
        const { recipeId } = this.props
        const ratingToken = TokenService.getRatingToken(recipeId)
-
        this.state = {
-            stars: !!ratingToken ?  this.returnStarArray(parseInt(ratingToken)) : [false, false, false, false, false],
+            stars: !!ratingToken ?  this.returnStarArray(parseInt(ratingToken.slice(0, ratingToken.indexOf(':')))) : [false, false, false, false, false],
             disabled: !!ratingToken
         }
     }
@@ -55,6 +54,8 @@ export default class StarRating extends Component {
 
     submitRating = (rating) =>{
         
+        const { recipeId } = this.props
+
         if(!this.state.disabled){
             const newRating = { rating }
             const newState = this.state.stars
@@ -62,14 +63,39 @@ export default class StarRating extends Component {
                 newState[i] = true
             }
             this.setState({ stars : newState, disabled: true })
-            
-            const { recipeId } = this.props
 
             RatingApiService.postRating(newRating, recipeId)
             .then(newRating => { 
-                TokenService.saveRatingToken(recipeId, newRating.rating) 
+                const reference = newRating.rating + ':' + newRating.id
+                TokenService.saveRatingToken(recipeId, reference) 
             })
             .catch(res =>{ this.setState({ error: res.error})})
+        }
+        else{
+
+            const currentRating = TokenService.getRatingToken(recipeId)
+            const ratingId = currentRating.slice(currentRating.indexOf(':') + 1, currentRating.length)
+            const updatedRating = {
+                rating,
+                id : ratingId
+            }
+
+            RatingApiService.updateRating(updatedRating, recipeId)
+                .then(updatedRating=>{
+                      TokenService.clearRatingToken(recipeId)
+
+                      const newState = this.state.stars
+                      for(let i = 1; i < 6; i++){
+                        if(i < rating){ newState[i] = true }
+                        else{ newState[i] = false }
+                      }
+                      this.setState({ stars : newState, disabled: true })
+            
+                      const reference = updatedRating.rating + ':' + updatedRating.id
+
+                      TokenService.saveRatingToken(recipeId, reference)
+                })
+                .catch(res =>{ this.setState({ error: res.error})})
         }
     }
 
@@ -78,13 +104,13 @@ export default class StarRating extends Component {
             return (
                 <div 
                     key={num} 
+                    onClick={()=> this.submitRating(num)} 
                     className="star-rating">
                      <FontAwesomeIcon  
                         style={{display : (!this.state.stars[index]) ? "inline" : 'none'}} 
                         onMouseEnter={() => this.showSolid(index)} className="view-recipe-star" 
                         icon={['far', 'star']}/>
-                    <FontAwesomeIcon  
-                        onClick={()=> this.submitRating(num)} 
+                    <FontAwesomeIcon 
                         style={{display : (this.state.stars[index]) ? "inline" : 'none'}} 
                         onMouseLeave={() => this.showRegular(num)} 
                         className="view-recipe-star" 
@@ -98,7 +124,7 @@ export default class StarRating extends Component {
         return (
             <>
               <label className="view-recipe-rate">
-                    {!this.disabled ? "Your rating" : "Rate this recipe"}
+                    {this.state.disabled ? "Your rating" : "Rate this recipe"}
               </label>
               <span className="view-recipe-stars">
                     {this.renderStarRating()}

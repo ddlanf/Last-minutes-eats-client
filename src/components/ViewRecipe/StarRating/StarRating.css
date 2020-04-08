@@ -2,6 +2,7 @@
     display: inline;
     font-size: 9vw;
     z-index: 7;
+    margin-left: 2%;
 }
 
 .view-recipe-rate{
@@ -12,6 +13,7 @@
 .view-recipe-stars{
     width: 100%;
     display: block;
+  
 }
 
 @media screen and (min-width: 1000px) {
@@ -24,5 +26,6 @@
     .star-rating{
         display: inline;
         font-size: 3.7vw;
+        margin-left: 0;
     }
 }

@@ -117,6 +117,12 @@ class ViewRecipe extends Component {
                         </Link>
                     </div>
                 </section>  
+                <Link
+                    to={`/delete-recipe/${recipeId}`}
+                    className="view-recipe-delete"
+                    >
+                    Delete this recipe
+                </Link>
             </>
         )
     }

@@ -1,6 +1,6 @@
 .view-recipe-logo{
     border: 1px black solid;
-    margin-top: 11vw;
+    margin-top: 8vw;
     width: 10vw;
     height: 10vw;
     max-height: 100px;
@@ -12,7 +12,7 @@
 
 .view-recipe-recipe{
     margin-top: 5%;
-    margin-bottom: 8%;
+    
     margin-right: auto;
     margin-left: auto;
     width: 90%;
@@ -77,6 +77,16 @@ a.view-recipe-edit, a.view-recipe-back{
     margin-bottom: 3%;
 }
 
+a.view-recipe-delete{
+    display: block;
+    color: red;
+    text-decoration: none;
+    font-size: 4vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5%;
+    text-align: center;
+}
 
 .view-recipe-preparation-time-mobile{
     display: block;
@@ -175,6 +185,7 @@ a.view-recipe-edit, a.view-recipe-back{
         font-size: 3vw;
     }
 
+    
     .view-recipe-star-box-mobile{
         display: none;
     }
@@ -183,7 +194,10 @@ a.view-recipe-edit, a.view-recipe-back{
         display: block;
         margin-top: 0;
     }  
-   
+
+    a.view-recipe-delete{
+        font-size: 2.2vw;
+    }
 }
 
 @media screen and (min-width: 1500px) {
@@ -217,5 +231,9 @@ a.view-recipe-edit, a.view-recipe-back{
 
     .view-recipe-rate-and-edit{
         font-size: 45px;
+    }
+
+    a.view-recipe-delete{
+        font-size: 1.8vw;
     }
 }

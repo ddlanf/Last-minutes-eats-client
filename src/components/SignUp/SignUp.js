@@ -50,7 +50,7 @@ export default class SignUp extends Component {
                 onSubmit={this.submitEmail}
                 className="sign-up-form">
                 <label className="sign-up-label">
-                    Please Enter Your Email
+                    Please enter your email to get early access to the full version of the App.
                 </label>
                 <input 
                     type="text"
@@ -61,7 +61,7 @@ export default class SignUp extends Component {
                 {this.state.submitted ? 
                 <p className="sign-up-submitted">
                     Thank you for signing in. We will email you once the full version of the 
-                    software is ready!!
+                    App is ready!!
                 </p> : ''}
                 <button
                     disabled={this.state.submitted}

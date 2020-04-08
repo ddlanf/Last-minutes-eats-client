@@ -2,32 +2,32 @@
 
 exports[`Make component renders the UI as expected 1`] = `
 <form
-  className="sign-up-form"
+  className="delete-recipe-form"
   onSubmit={[Function]}
 >
   <label
-    className="sign-up-label"
+    className="delete-recipe-label"
   >
-    Please enter your email to get early access to the full version of the App.
+    Enter token to delete this recipe
   </label>
   <input
-    className="sign-up-input"
-    name="email"
+    className="delete-recipe-input"
+    name="token"
     onChange={[Function]}
-    type="text"
+    type="password"
   />
   
   
   <button
-    className="sign-up-submit"
+    className="delete-recipe-submit"
     disabled={false}
     type="submit"
   >
     Submit
   </button>
   <a
-    className="sign-up-link"
-    href="/"
+    className="delete-recipe-link"
+    href="/view-recipe/undefined"
     onClick={[Function]}
   >
     Back

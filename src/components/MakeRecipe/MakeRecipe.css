@@ -91,34 +91,39 @@
 
 .make-recipe-preparation-time-box{
     margin-top: 1%;
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .make-recipe-preparation-time-input{
-    width: 10%;
     font-size: 5vw;
-    height: 6vw;
+    width: 10%;
 }
 
 .make-recipe-preparation-time-unit-input{
-    font-size: 3vw;
-    height: 6vw;
+    font-size: 5vw;
 }
 
-.make-recipe-error{
+.make-recipe-error, .make-recipe-buffer{
     font-size: 4.5vw;
     color: red;
 }
 
-.make-recipe-buffer{
-    font-size: 4.5vw;
-    color: black;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 @media screen and (min-width: 1000px) {
@@ -146,6 +151,11 @@
 
     .make-recipe-variable-input{
         font-size: 3vw;
+    }
+
+    .make-recipe-error, .make-recipe-buffer{
+        font-size: 3.5vw;
+        color: red;
     }
 
 }

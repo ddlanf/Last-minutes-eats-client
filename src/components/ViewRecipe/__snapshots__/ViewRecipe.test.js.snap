@@ -55,13 +55,14 @@ Array [
         <label
           className="view-recipe-rate"
         >
-          Your rating
+          Rate this recipe
         </label>
         <span
           className="view-recipe-stars"
         >
           <div
             className="star-rating"
+            onClick={[Function]}
           >
             <i
               className="fa"
@@ -72,6 +73,7 @@ Array [
           </div>
           <div
             className="star-rating"
+            onClick={[Function]}
           >
             <i
               className="fa"
@@ -82,6 +84,7 @@ Array [
           </div>
           <div
             className="star-rating"
+            onClick={[Function]}
           >
             <i
               className="fa"
@@ -92,6 +95,7 @@ Array [
           </div>
           <div
             className="star-rating"
+            onClick={[Function]}
           >
             <i
               className="fa"
@@ -102,6 +106,7 @@ Array [
           </div>
           <div
             className="star-rating"
+            onClick={[Function]}
           >
             <i
               className="fa"
@@ -164,13 +169,14 @@ Array [
       <label
         className="view-recipe-rate"
       >
-        Your rating
+        Rate this recipe
       </label>
       <span
         className="view-recipe-stars"
       >
         <div
           className="star-rating"
+          onClick={[Function]}
         >
           <i
             className="fa"
@@ -181,6 +187,7 @@ Array [
         </div>
         <div
           className="star-rating"
+          onClick={[Function]}
         >
           <i
             className="fa"
@@ -191,6 +198,7 @@ Array [
         </div>
         <div
           className="star-rating"
+          onClick={[Function]}
         >
           <i
             className="fa"
@@ -201,6 +209,7 @@ Array [
         </div>
         <div
           className="star-rating"
+          onClick={[Function]}
         >
           <i
             className="fa"
@@ -211,6 +220,7 @@ Array [
         </div>
         <div
           className="star-rating"
+          onClick={[Function]}
         >
           <i
             className="fa"
@@ -240,5 +250,12 @@ Array [
       </a>
     </div>
   </section>,
+  <a
+    className="view-recipe-delete"
+    href="/delete-recipe/undefined"
+    onClick={[Function]}
+  >
+    Delete this recipe
+  </a>,
 ]
 `;

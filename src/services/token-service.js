@@ -18,6 +18,10 @@ const TokenService = {
   clearAuthToken() {
     window.localStorage.removeItem(config.EMAIL_SUBMITTED)
   },
+  clearRatingToken(recipeId) {
+    const tokenName = `recipe${recipeId}`
+    window.localStorage.removeItem(tokenName)
+  },
   hasEmailToken() {
     return !!TokenService.getEmailToken()
   },

@@ -10,12 +10,12 @@ import ViewAllRecipes from '../ViewAllRecipes/ViewAllRecipes'
 import ViewRecipe from '../ViewRecipe/ViewRecipe'
 import EditRecipe from '../EditRecipe/EditRecipe'
 import MakeRecipe from '../MakeRecipe/MakeRecipe'
+import DeleteRecipe from '../DeleteRecipe/DeleteRecipe'
 import TokenService from '../../services/token-service'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { faStar as fasStar, faStarHalfAlt} from '@fortawesome/free-solid-svg-icons';
-import Star from '../ViewRecipe/StarRating/StarRating'
 library.add(farStar, fasStar, fab, faStarHalfAlt)
 
 export default class App extends Component {
@@ -77,8 +77,9 @@ export default class App extends Component {
                   component={MakeRecipe}
                 />
                 <Route
-                  exact path={'/star'}
-                  component={Star}
+                  exact
+                  path={'/delete-recipe/:recipeId'}
+                  component={DeleteRecipe}
                 />
                 <Route
                   component={NotFoundPage}
