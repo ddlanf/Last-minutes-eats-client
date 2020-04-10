@@ -57,6 +57,7 @@
     font-size: 4.5vw;
     padding-left: 2%;
     padding-right: 2%;
+    
 }
 
 .view-all-recipes-recipe-details{
@@ -113,11 +114,11 @@ a.view-all-recipes-link{
     }
 
     .view-all-recipes-recipe-name{
-        font-size: 3vw;
+        font-size: 3.2vw;
     }
 
     .view-all-recipes-preparation-time, .view-all-recipes-amount-of-steps, .view-all-recipes-amount-of-ingredients{
-        font-size: 2vw;
+        font-size: 2.8vw;
     }
 
     .view-all-recipes-rating{

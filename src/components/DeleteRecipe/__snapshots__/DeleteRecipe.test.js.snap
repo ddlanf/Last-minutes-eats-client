@@ -26,7 +26,7 @@ exports[`Make component renders the UI as expected 1`] = `
     Submit
   </button>
   <a
-    className="delete-recipe-link"
+    className="delete-recipe-back"
     href="/view-recipe/undefined"
     onClick={[Function]}
   >

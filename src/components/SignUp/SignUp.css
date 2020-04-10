@@ -11,10 +11,7 @@
     top: -900px;
     left: 0;
     z-index:1000;
-    background-image: url("../../images/cutting-board.png");
-    background-repeat: no-repeat;
-    background-position: center;    
-    background-size: cover;
+    background-color: rgba(0, 45, 82, 0.438);
     text-align: center; 
     animation-name: slide-down;
     animation-fill-mode: forwards;
@@ -49,6 +46,7 @@
 }
 
 .sign-up-submit{
+    cursor: pointer;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -65,13 +63,13 @@ a.sign-up-back{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
     background-color: transparent;
     border: 1.5px solid rgb(99, 99, 99);
     color: rgb(99, 99, 99);
-    width: 30%;
+    width: 25%;
     text-decoration: none;
     border-radius: 3rem;
-    padding: .5rem 1.5rem;
     font-size: 6vw;
     margin-top: 5%;
 }
@@ -92,8 +90,9 @@ a.sign-up-back{
 
 @media screen and (min-width: 1000px){
     .sign-up-label{
-        font-size: 3vw;
-        margin-bottom: 1%;
+        font-size: 4vw;
+        margin-top: 6vw;
+        margin-bottom: 5%;
     }
 
     .sign-up-input{
@@ -120,6 +119,11 @@ a.sign-up-back{
 
     .sign-up-submitted{
         font-size:  3vw;
-        width: 80%;
+        width: 100%;
+    }
+
+    a.sign-up-back{
+        font-size: 3.5vw;
+        width: 13%;
     }
 }

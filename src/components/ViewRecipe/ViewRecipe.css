@@ -3,7 +3,8 @@
     margin-right: auto;
     margin-left: auto;
     width: 90%;
-    max-width: 1200px;}
+    max-width: 2000px;
+}
 
 .view-recipe-image-box{
     margin-top: 5%;
@@ -134,22 +135,22 @@ a.view-recipe-delete{
     }
 
     h2.view-recipe-ingredients-header, h2.view-recipe-instructions-header{
-        font-size: 3.5vw;
+        font-size: 3.2vw;
     }
 
     .view-recipe-ingredients.short-list{
-        font-size: 3vw;
+        font-size: 2.8vw;
     }
     .view-recipe-ingredients.long-list{
-        font-size: 2.5vw;
+        font-size: 2.2vw;
     }
 
     .view-recipe-instructions.short-list{
-        font-size: 2.7vw;
+        font-size: 2.3vw;
     }
 
     .view-recipe-instructions.long-list{
-        font-size: 2.4vw;
+        font-size: 2vw;
     }
 
     .view-recipe-main-detail{

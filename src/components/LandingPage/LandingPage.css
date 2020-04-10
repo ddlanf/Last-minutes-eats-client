@@ -67,6 +67,7 @@
     width: 95%;
     line-height: normal;
     margin-bottom: 2%;
+    font-family: 'Roboto';
 }
 
 .landing-page-my-info{
@@ -122,12 +123,15 @@
     margin-right: auto;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 5%;
 }
 
 .github, .linkedIn{
     color: black;
     transition: 1s;
-    min-width: 10vw;
+    max-width: 10vw;
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
 
 .github:hover, .linkedIn:hover{
@@ -167,6 +171,7 @@
 
     .landing-page-hero{
         position: relative;
+        top: 2vw;
         margin-top: 0;
         width: 45vw;
         height: 45vw;
@@ -197,7 +202,7 @@
 
     .landing-page-heading-text{
         width: 100%;
-        max-width: 700px;
+        max-width: 1000px;
         text-align: center;
         margin-right: auto;
         margin-left: auto;
@@ -205,7 +210,8 @@
     }
 
     .landing-page-heading-small-text{
-        font-size: 25px;
+        width: 90%;
+        font-size: 2vw;
     }
     
     .landing-page-my-name{
@@ -237,5 +243,14 @@
         justify-content: space-between;
     }
 
+    .github, .linkedIn{
+        color: black;
+        transition: 1s;
+        max-width: 8vw;
+    }
+
+    .portfolio{
+        font-size: 3vw;
+    }
     
 }

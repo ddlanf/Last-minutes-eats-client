@@ -93,7 +93,7 @@ class ViewRecipe extends Component {
                             className={`view-recipe-ingredients  ${(recipe.ingredients.length <= 3) ? 'short-list' : 'long-list'}`}>
                             {this.makeIngredientsList(recipe.ingredients)}
                         </ul>
-                        <h2>Instructions</h2>
+                        <h2 className="view-recipe-ingredients-header">Instructions</h2>
                         <ol className={`view-recipe-instructions
                          ${(recipe.steps.length <= 4) ? 'short-list' : 'long-list'}`}>
                             {this.makeStepsList(recipe.steps)}

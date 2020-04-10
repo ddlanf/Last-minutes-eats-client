@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+
 .nav-bar{
     position: fixed;
     top: 0;
@@ -14,30 +16,33 @@
 .nav-bar-left-nav, .nav-bar-right-nav{
     position: absolute;
     text-align: left;
-    font-size: 15px;
 }
 
 
 .nav-bar-left-nav{
     padding-left: 3%;
-    padding-top: 4px;
+    padding-top: 6px;
     width: 130px;
+    font-size: 9px;
+   
 }
 
 .nav-bar-right-nav{
     right: 0;
     padding-top: 15px;
     padding-right: 3%;
+    font-size: 11px;
 }
 
 a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
     color: white;
     text-decoration: none;
+    font-family: 'Rock Salt';
 }
 
 .nav-break{
     display: block;
-    margin-left: 23%;
+    margin-left: 20px;
 }
 
 .logo-container{
@@ -49,9 +54,7 @@ a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
 
 .line{
     width: 100%;
-    min-height: 50px;
-    height: 13vw;
-    max-height: 50px;
+    height: 50px;
     background-color: #002D52;
     position: absolute;
     z-index: -10;
@@ -61,7 +64,7 @@ a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
 .get-started{
     margin-right: 11%;
     opacity: 0;
-    animation: appear 1s 5s forwards;
+    animation: appear 1s 3s forwards;
 }
 
 .get-started-arrow{
@@ -70,15 +73,16 @@ a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
     color: black;
     margin-bottom: 0;
     position: relative;
-    animation: upAndDown 1s linear 2s infinite;
+    animation: upAndDown 2s linear 1s infinite;
 }
 
 .get-started-text{
-    width: 60%;
+    font-family: 'Baloo Tamma 2', cursive;
+    width: 20vw;
     margin-left: 0%;
     margin-top: -5px;
     text-align: center;
-    font-size: 12px;
+    font-size: 3.5vw;
     color: blue;
     font-weight: bold;
 }
@@ -94,18 +98,62 @@ a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
     100% { opacity: 1;}
 }
 
-img.last-minute-eats-logo{
+@keyframes tilt{
+    0% { transform: rotateZ(0deg);}
+    85% {transform: rotateZ(0deg);}
+    90% { transform: rotateZ(-25deg);}
+    95%{  transform: rotateZ(25deg); }
+    100%{  transform: rotateZ(0deg); }
+}
+
+.last-minute-eats-logo{
+    max-width: 15vw;
+}
+
+.last-minute-eats-logo > img{
     margin-top: 1.6px;
     width: 15vw;
     max-width: 70px;
+    animation: tilt 10s 0s infinite forwards;
+}
+
+@media screen and (min-width: 550px) {
+    .line{
+      height: 65px;
+    }
+  
+    .nav-bar-right-nav{
+        font-size: 15px;
+    }
+
+    .nav-break{
+        display: inline;
+        margin-left: 5px;
+    }
+
+    .nav-bar-left-nav{
+        padding-top: 15px;
+        width: 200px;
+        font-size: 15px;
+    }
+
+    .last-minute-eats-logo{
+        max-width: 12vw;
+    }
+
+    .last-minute-eats-logo > img{
+        margin-top: 1.2px;
+        width: 12vw;
+        max-width: 120px;
+    }
 }
 
 @media screen and (min-width: 1000px) {
 
-    
+
     .nav-bar-left-nav, .nav-bar-right-nav{
         font-size: 28px;
-        padding-top: 20px;
+        padding-top: 14px;
     }
     
     .nav-break{
@@ -114,13 +162,11 @@ img.last-minute-eats-logo{
     
     .nav-bar-left-nav{
         padding-left: 3%;
-        padding-top: 30px;
-        width: 300px;
+        width: 500px;
     }
     
     .nav-bar-right-nav{
         right: 0;
-        padding-top: 30px;
         padding-right: 3%;
     }
     
@@ -129,7 +175,7 @@ img.last-minute-eats-logo{
         margin-left: 6px;
     }
 
-    img.last-minute-eats-logo{
+    .last-minute-eats-logo > img{
         margin-top: 1.6px;
         width: 12vw;
         max-width: 150px;
@@ -143,8 +189,8 @@ img.last-minute-eats-logo{
     
     .get-started-arrow{
         position: relative;
-        margin-top: 10px;
-        left: 80px;
+        margin-top: 5px;
+        left: 30px;
         font-size: 5vw;
         position: relative;
         animation: upAndDown 1s linear 3s infinite;
@@ -152,9 +198,9 @@ img.last-minute-eats-logo{
     
     .get-started-text{
         width: 500px;
-        margin-left: 0%;
+        margin-left: -20%;
         text-align: center;
-        font-size: 30px;
+        font-size: 28px;
         position: relative;
         bottom: 10px;
     }

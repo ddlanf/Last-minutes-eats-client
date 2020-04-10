@@ -12,7 +12,43 @@ exports[`Make component renders the UI as expected 1`] = `
       href="/view-all-recipes"
       onClick={[Function]}
     >
-      Last Minute Eats
+      Last Minute
+      <span
+        className="nav-break"
+      >
+        Eats
+      </span>
+    </a>
+    <div
+      className="get-started"
+    >
+      <div
+        className="get-started-arrow"
+      >
+        ↑
+      </div>
+      <p
+        className="get-started-text"
+      >
+        Click here to get started!
+      </p>
+    </div>
+  </div>
+  <div
+    className="logo-container"
+  >
+    <div
+      className="line"
+    />
+    <a
+      className="last-minute-eats-logo"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt="logo"
+        src="logo.png"
+      />
     </a>
   </div>
   <div

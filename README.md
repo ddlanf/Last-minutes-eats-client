@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Last Minute Eats Client**
 
-## Available Scripts
+Website Link: [https://last-minute-eats.now.sh](https://last-minute-eats.now.sh)
 
-In the project directory, you can run:
+## Image
+![Screenshot1](/src/images/last-minute-eats.png)
+![Screenshot2](/src/images/last-minute-eats2.png)
 
-### `npm start`
+## Core Features
+This serves the client side of the Last Minute Eats app.
+The pages this app provides include
+* Landing Page - Landing page for Last Minute Eats app
+* ViewAllRecipes - A list of all the recipes
+* SignUp - Sign up page for new users
+* MakeRecipe - for making a new recipe
+* Edit Recipe - for editting an existing recipe
+* Delete Recipe - for deleting a recipe
+* ViewRecipe - Show the details of an individual recipe
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**This is a project created with React. It uses Font Awesome for logos and stars, and vanilla CSS for styling and animation**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Server Link: [https://last-minute-eats-server.herokuapp.com/api](https://last-minute-eats-server.herokuapp.com/api)**
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Running the App locally
+Running the App locally requires ones to clone [https://last-minute-eats-server.herokuapp.com/api](https://last-minute-eats-server.herokuapp.com/api). Once both client and server are cloned, do the following.
+1. In "myusedcarsalesman-client", change the API_ENDPOINT in config.js to localhost:8000/api or any other ports that may be used (If you are usig port 8000, just uncomment line 3, and comment out line 2).
+2. Configure the CORS setting in "last-minute-eats-server" to allow the localhost to send requests. This can be done simply adding app.use(cors()) in App.js file or chaging the value of CLIENT_ORIGIN in config.js  
+3. Run both client and server with "npm start". "npm run dev" can also be used in "last-minute-eats-server"

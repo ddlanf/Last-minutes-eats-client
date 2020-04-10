@@ -48,13 +48,13 @@ exports[`Make component renders the UI as expected 1`] = `
       </div>
     </div>
     <div
-      className="make-recipe-ingredients-and-steps"
+      className="make-recipe-ingredients-and-instructions"
     >
       <div
         className="make-recipe-instructions-field"
       >
         <label
-          className="make-recipe-label"
+          className="make-recipe-label instructions"
         >
           Instructions
         </label>
@@ -69,6 +69,11 @@ exports[`Make component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="make-recipe-number"
+            >
+              1
+            </span>
             <button
               className="make-recipe-plus"
               onClick={[Function]}
@@ -97,6 +102,11 @@ exports[`Make component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="make-recipe-number"
+            >
+              2
+            </span>
             <button
               className="make-recipe-plus"
               onClick={[Function]}
@@ -136,6 +146,11 @@ exports[`Make component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="make-recipe-number"
+            >
+              3
+            </span>
             <button
               className="make-recipe-plus"
               onClick={[Function]}
@@ -175,6 +190,11 @@ exports[`Make component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="make-recipe-number"
+            >
+              4
+            </span>
             <button
               className="make-recipe-plus"
               onClick={[Function]}
@@ -214,6 +234,11 @@ exports[`Make component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="make-recipe-number"
+            >
+              5
+            </span>
             <button
               className="make-recipe-plus"
               onClick={[Function]}
@@ -253,6 +278,11 @@ exports[`Make component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="make-recipe-number"
+            >
+              6
+            </span>
             <button
               className="make-recipe-plus"
               onClick={[Function]}
@@ -292,6 +322,11 @@ exports[`Make component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="make-recipe-number"
+            >
+              7
+            </span>
             
             <textarea
               className="make-recipe-variable-input"
@@ -537,6 +572,11 @@ exports[`Make component renders the UI as expected 1`] = `
       className="make-recipe-submit"
       disabled={true}
       name="submit"
+      style={
+        Object {
+          "opacity": "0.5",
+        }
+      }
       type="submit"
     >
       Submit
@@ -546,7 +586,7 @@ exports[`Make component renders the UI as expected 1`] = `
       onClick={[Function]}
       type="button"
     >
-      Back
+      Cancel
     </button>
   </form>
 </section>

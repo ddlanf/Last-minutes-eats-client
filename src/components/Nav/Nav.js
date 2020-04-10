@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
-import Logo from '../Logo/Logo'
 import "./Nav.css"
 
 class Nav extends Component {
@@ -8,14 +7,14 @@ class Nav extends Component {
     rendorRightNavBar(){
         const rightNavBar = 
         ['view-all-recipes', 'view-recipe/:recipeId', 'edit-recipe/:recipeId']
-        .map(path =>{
-           
-           return(  
-                    <Route
-                         exact key={path} path={`/${path}`}>
-                        <Link className="nav-bar-right-nav-link" to="/make-recipe">Make Recipe</Link>
-                    </Route>);
-        })
+            .map(path =>{
+            
+            return(  
+                        <Route
+                            exact key={path} path={`/${path}`}>
+                            <Link className="nav-bar-right-nav-link" to="/make-recipe">Make Recipe</Link>
+                        </Route>);
+            })
 
         rightNavBar.push(
             (<Route
@@ -50,7 +49,9 @@ class Nav extends Component {
                 </div>
                 <div className="logo-container">
                     <div className="line"></div>
-                    <img className="last-minute-eats-logo" src={require('../../images/logo.png')} alt="logo"/>
+                    <Link to="/" className="last-minute-eats-logo">
+                        <img  src={require('../../images/logo.png')} alt="logo"/>
+                     </Link>
                 </div>
                 <div className="nav-bar-right-nav">
                     {this.rendorRightNavBar()}

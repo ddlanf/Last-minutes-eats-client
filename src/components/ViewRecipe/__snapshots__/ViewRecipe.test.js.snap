@@ -139,7 +139,8 @@ Array [
       <h2
         className="view-recipe-preparation-time-mobile"
       >
-        undefined
+         
+        
       </h2>
       <h2
         className="view-recipe-ingredients-header"
@@ -147,13 +148,16 @@ Array [
         Ingredients
       </h2>
       <ul
-        className="view-recipe-ingredients"
+        className="view-recipe-ingredients  short-list"
       />
-      <h2>
+      <h2
+        className="view-recipe-ingredients-header"
+      >
         Instructions
       </h2>
       <ol
-        className="view-recipe-instructions"
+        className="view-recipe-instructions
+                         short-list"
       />
     </div>
     <div

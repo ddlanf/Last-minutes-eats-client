@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Make component renders the UI as expected 1`] = `
-Array [
+<div
+  className="landing-page"
+>
   <div
     className="lading-page-top-sections"
   >
@@ -65,7 +67,7 @@ Array [
       />
     </section>
     <div
-      className="lading-page-headings"
+      className="landing-page-headings"
     >
       <section
         className="landing-page-heading first"
@@ -97,7 +99,7 @@ Array [
         <div
           className="landing-page-heading-small-text"
         >
-          Average Americnans spend 2 hours a day preparing meals.
+          Average Americans spend 2 hours a day preparing meals.
           <span
             className="landing-page-break"
           >
@@ -106,25 +108,26 @@ Array [
           <span
             className="landing-page-break"
           >
-            Our recipes has less than 5 ingredient and fewer than 7 short steps to have your stomach filled
+            Our recipes has less than 5 ingredient and fewer than 7 short steps to have your stomach filled.
           </span>
         </div>
       </section>
     </div>
-  </div>,
+  </div>
   <section
     className="landing-page-my-info"
   >
-    <p
+    <div
       className="landing-page-my-name"
     >
       Created by Daniel Laufenberg
-    </p>
+    </div>
     <div
       className="github-and-linkedIn-links-mobile"
     >
       <a
         href="https://github.com/ddlanf"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <i
@@ -133,6 +136,7 @@ Array [
       </a>
       <a
         href="https://www.linkedin.com/in/daniel-laufenberg/"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <i
@@ -145,6 +149,7 @@ Array [
     >
       <a
         href="https://github.com/ddlanf"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <i
@@ -153,6 +158,7 @@ Array [
       </a>
       <a
         href="https://www.linkedin.com/in/daniel-laufenberg/"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <i
@@ -160,6 +166,18 @@ Array [
         />
       </a>
     </div>
+    <p
+      className="portfolio"
+    >
+      <a
+        className="portfolio-link"
+        href="https://ddlanf.github.io/Portfolio"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Portfolio
+      </a>
+    </p>
     <p
       className="landing-page-copy"
     >
@@ -170,6 +188,6 @@ Array [
     >
       All Rights Reserved
     </p>
-  </section>,
-]
+  </section>
+</div>
 `;

@@ -21,7 +21,7 @@ input[type=number] {
 
 .edit-recipe{
     width: 80%;
-    max-width: 1300px;
+    max-width: 2100px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20%;
@@ -45,12 +45,12 @@ input[type=number] {
     font-size: 4.5vw;
     margin-top: 1vw;
     margin-bottom: 2%;
+    font-weight: bold;
 }
 
 .edit-recipe-input{
     width: 90%;
     margin-bottom: 5%;
-    font-size: 4.5vw;
     max-width: 500px;
     border: none;
     border-bottom: 1px solid black;
@@ -63,7 +63,6 @@ input[type=number] {
     padding-top: 4%;
     padding-bottom: 8%;
     overflow-y: auto;
-    margin-top: ;
     margin-left: auto;
     margin-right: auto;
 }
@@ -198,6 +197,7 @@ textarea.edit-recipe-variable-input{
     margin-top: 10%;
     padding: 2%;
     font-size: 6vw;
+    cursor: pointer;
 }
 
 .edit-recipe-submit{
@@ -221,7 +221,7 @@ textarea.edit-recipe-variable-input{
 @media screen and (min-width: 1000px) {
 
     .edit-recipe{
-        width: 100%;
+        width: 85%;
         margin-top: 10%;
     }
 
@@ -238,6 +238,12 @@ textarea.edit-recipe-variable-input{
 
     .instructions.edit-recipe-label{
         margin-bottom: 0;
+
+    }
+
+    .edit-recipe-instructions-input-box{
+        height: 48vw;
+        margin-top: -10px;
     }
 
     .edit-recipe-ingredients-and-instructions{

@@ -50,7 +50,7 @@ exports[`Edit component renders the UI as expected 1`] = `
       </div>
     </div>
     <div
-      className="edit-recipe-ingredients-and-steps"
+      className="edit-recipe-ingredients-and-instructions"
     >
       <div
         className="edit-recipe-instructions-field"
@@ -71,6 +71,11 @@ exports[`Edit component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="edit-recipe-number"
+            >
+              1
+            </span>
             <button
               className="edit-recipe-plus"
               onClick={[Function]}
@@ -100,6 +105,11 @@ exports[`Edit component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="edit-recipe-number"
+            >
+              2
+            </span>
             <button
               className="edit-recipe-plus"
               onClick={[Function]}
@@ -140,6 +150,11 @@ exports[`Edit component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="edit-recipe-number"
+            >
+              3
+            </span>
             <button
               className="edit-recipe-plus"
               onClick={[Function]}
@@ -180,6 +195,11 @@ exports[`Edit component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="edit-recipe-number"
+            >
+              4
+            </span>
             <button
               className="edit-recipe-plus"
               onClick={[Function]}
@@ -220,6 +240,11 @@ exports[`Edit component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="edit-recipe-number"
+            >
+              5
+            </span>
             <button
               className="edit-recipe-plus"
               onClick={[Function]}
@@ -260,6 +285,11 @@ exports[`Edit component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="edit-recipe-number"
+            >
+              6
+            </span>
             <button
               className="edit-recipe-plus"
               onClick={[Function]}
@@ -300,6 +330,11 @@ exports[`Edit component renders the UI as expected 1`] = `
               }
             }
           >
+            <span
+              className="edit-recipe-number"
+            >
+              7
+            </span>
             
             <textarea
               className="edit-recipe-variable-input"
@@ -552,16 +587,21 @@ exports[`Edit component renders the UI as expected 1`] = `
       className="edit-recipe-submit"
       disabled={true}
       name="submit"
+      style={
+        Object {
+          "opacity": "0.5",
+        }
+      }
       type="submit"
     >
       Submit
     </button>
     <button
-      className="edit-recipe-submit"
+      className="edit-recipe-back"
       onClick={[Function]}
       type="button"
     >
-      Back
+      Cancel
     </button>
   </form>
 </section>
