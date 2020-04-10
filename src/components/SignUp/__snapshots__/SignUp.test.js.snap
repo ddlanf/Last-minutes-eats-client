@@ -1,36 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Make component renders the UI as expected 1`] = `
-<form
-  className="sign-up-form"
-  onSubmit={[Function]}
+<section
+  className="sign-up "
 >
-  <label
-    className="sign-up-label"
+  <form
+    className="sign-up-form"
+    onSubmit={[Function]}
   >
-    Please enter your email to get early access to the full version of the App.
-  </label>
-  <input
-    className="sign-up-input"
-    name="email"
-    onChange={[Function]}
-    type="text"
-  />
-  
-  
-  <button
-    className="sign-up-submit"
-    disabled={false}
-    type="submit"
-  >
-    Submit
-  </button>
-  <a
-    className="sign-up-link"
-    href="/"
-    onClick={[Function]}
-  >
-    Back
-  </a>
-</form>
+    <label
+      className="sign-up-label"
+    >
+      Please enter your email to get early access to the full version of the App.
+    </label>
+    <input
+      className="sign-up-input"
+      name="email"
+      onChange={[Function]}
+      type="text"
+    />
+    
+    
+    <button
+      className="sign-up-submit"
+      disabled={false}
+      type="submit"
+    >
+      Submit
+    </button>
+    <a
+      className="sign-up-back"
+      href="/"
+      onClick={[Function]}
+    >
+      Back
+    </a>
+  </form>
+</section>
 `;

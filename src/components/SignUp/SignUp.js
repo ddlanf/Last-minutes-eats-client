@@ -44,39 +44,42 @@ export default class SignUp extends Component {
         }
     }
 
+
     render() {
         return (
-            <form
-                onSubmit={this.submitEmail}
-                className="sign-up-form">
-                <label className="sign-up-label">
-                    Please enter your email to get early access to the full version of the App.
-                </label>
-                <input 
-                    type="text"
-                    name="email"
-                    onChange={this.handleInputChange}
-                    className="sign-up-input"/>
-                {this.state.error ? <p className="sign-up-error">{this.state.error}</p> : ''}
-                {this.state.submitted ? 
-                <p className="sign-up-submitted">
-                    Thank you for signing in. We will email you once the full version of the 
-                    App is ready!!
-                </p> : ''}
-                <button
-                    disabled={this.state.submitted}
-                    type="submit"
-                    className="sign-up-submit"
-                    >
-                    Submit
-                </button>
-                <Link
-                    to="/"
-                    className="sign-up-link"
-                    >
-                    Back
-                </Link>
-            </form>
+            <section 
+                className={`sign-up ${this.state.back ? 'slide-up' : ''}`}>
+                <form
+                    onSubmit={this.submitEmail}
+                    className="sign-up-form">
+                    <label className="sign-up-label">
+                        Please enter your email to get early access to the full version of the App.
+                    </label>
+                    <input 
+                        type="text"
+                        name="email"
+                        onChange={this.handleInputChange}
+                        className="sign-up-input"/>
+                    {this.state.error ? <p className="sign-up-error">{this.state.error}</p> : ''}
+                    {this.state.submitted ? 
+                    <p className="sign-up-submitted">
+                        Thank you for signing in. We will email you once the full version of the 
+                        App is ready!!
+                    </p> : ''}
+                    <button
+                        disabled={this.state.submitted}
+                        type="submit"
+                        className="sign-up-submit"
+                        >
+                        Submit
+                    </button>
+                    <Link 
+                        className="sign-up-back"
+                        to="/">
+                            Back
+                    </Link>
+                </form>
+            </section>
         )
     }
 }

@@ -120,6 +120,7 @@ class EditRecipe extends Component {
                     key={num} 
                     style={{display: this.state.steps[index].display ? 'block' : 'none' }}
                     className="edit-recipe-button-and-text steps">
+                     <span className="edit-recipe-number">{num}</span>
                      {(index !== 6) ?
                         <button 
                             type="button"
@@ -293,7 +294,7 @@ class EditRecipe extends Component {
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        <div className="edit-recipe-ingredients-and-steps">
+                        <div className="edit-recipe-ingredients-and-instructions">
                                 <div className="edit-recipe-instructions-field">
                                     <label className="edit-recipe-label">Instructions</label>
                                     <div className="edit-recipe-instructions-input-box">
@@ -329,15 +330,16 @@ class EditRecipe extends Component {
                             type="submit" 
                             name="submit"
                             disabled={!this.state.changed}
+                            style={{opacity: (!this.state.changed ? '0.5' : '1')}}
                             className="edit-recipe-submit">
                             Submit
                         </button>
                         <button 
                             type="button"
                             onClick={this.goBack}
-                            className="edit-recipe-submit"
+                            className="edit-recipe-back"
                             >
-                            Back
+                            Cancel
                         </button>
                     </form>
                 </section>   

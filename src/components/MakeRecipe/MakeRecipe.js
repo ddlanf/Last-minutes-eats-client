@@ -117,6 +117,7 @@ export default class MakeRecipe extends Component {
                     key={num} 
                     style={{display: this.state.steps[index].display ? 'block' : 'none' }}
                     className="make-recipe-button-and-text">
+                    <span className="make-recipe-number">{num}</span>
                      {(index !== 6) ?
                         <button 
                             type="button"
@@ -243,9 +244,9 @@ export default class MakeRecipe extends Component {
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        <div className="make-recipe-ingredients-and-steps">
+                        <div className="make-recipe-ingredients-and-instructions">
                             <div className="make-recipe-instructions-field">
-                                <label className="make-recipe-label">Instructions</label>
+                                <label className="make-recipe-label instructions">Instructions</label>
                                 <div className="make-recipe-instructions-input-box">
                                     {this.makeInstructionlists()}
                                 </div>
@@ -278,6 +279,7 @@ export default class MakeRecipe extends Component {
                             type="submit" 
                             name="submit"
                             disabled={!this.state.changed}
+                            style={{opacity: (!this.state.changed ? '0.5' : '1')}}
                             className="make-recipe-submit">
                             Submit
                         </button>
@@ -286,7 +288,7 @@ export default class MakeRecipe extends Component {
                             onClick={this.goBack}
                             className="make-recipe-back"
                             >
-                            Back
+                            Cancel
                         </button>
                     </form>
                 </section>   

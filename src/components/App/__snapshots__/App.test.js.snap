@@ -33,69 +33,184 @@ exports[`App component renders the UI as expected 1`] = `
         </a>
       </div>
     </nav>
+    <div
+      className="
+                    logo 
+                    
+                "
+      onClick={[Function]}
+    >
+      <p>
+        Click me to get started
+      </p>
+      <img
+        alt="logo"
+        className="logo-image"
+        src="onigiri.png"
+      />
+    </div>
   </header>
   <main
     className="App_main"
   >
-    <section
-      className="landing-page-hero"
+    <div
+      className="lading-page-top-sections"
     >
-      <a
-        href="/view-all-recipes"
-        onClick={[Function]}
+      <section
+        className="landing-page-hero"
       >
-        Click Here to get started
-      </a>
-    </section>
-    <section
-      className="landing-page-heading first"
-    >
-      <h1
-        className="landing-page-heading-text"
-      >
-        Woke up late to work in the morning or feeling lazy to prepare a whole meal?
-        <span
-          className="landing-page-break"
-        >
-          Last minute eats have the perfect recipes for you
-        </span>
-      </h1>
-    </section>
-    <section
-      className="landing-page-heading second"
-    >
-      <h1>
-        Your time is valuable. That's why we make our recipes less than 15 minutes to prepare.
-      </h1>
+        <img
+          alt="pizza"
+          className="food-image"
+          onAnimationEnd={[Function]}
+          src="pizza.jpg"
+          style={
+            Object {
+              "display": "block",
+            }
+          }
+        />
+        <img
+          alt="chicken"
+          className="food-image"
+          onAnimationEnd={[Function]}
+          src="chicken.jpg"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+        <img
+          alt="noodle"
+          className="food-image"
+          onAnimationEnd={[Function]}
+          src="noodle.png"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+        <img
+          alt="rice"
+          className="food-image"
+          onAnimationEnd={[Function]}
+          src="rice.jpg"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+        <img
+          alt="taco"
+          className="food-image"
+          onAnimationEnd={[Function]}
+          src="tacos.jpg"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+      </section>
       <div
-        className="landing-page-heading-small-text"
+        className="lading-page-headings"
       >
-        Average Americnans spend 2 hours a day preparing meals.
-        <span
-          className="landing-page-break"
+        <section
+          className="landing-page-heading first"
         >
-          That's 30 days a year spent on cooking alone!
-        </span>
-        <span
-          className="landing-page-break"
+          <h1
+            className="landing-page-heading-text"
+          >
+            Woke up late to work in the morning or feeling lazy to prepare a whole meal?
+            <span
+              className="landing-page-break"
+            >
+              Last minute eats has the perfect recipes for you
+            </span>
+          </h1>
+        </section>
+        <section
+          className="landing-page-heading second"
         >
-          Our recipes less than 5 ingredient and fewer than 7 short steps to have your stomach filled
-        </span>
+          <h1
+            className="landing-page-heading-text"
+          >
+            Your time is valuable.
+            <span
+              className="landing-page-break"
+            >
+              That's why all of our recipes take less than 15 minutes to prepare.
+            </span>
+          </h1>
+          <div
+            className="landing-page-heading-small-text"
+          >
+            Average Americnans spend 2 hours a day preparing meals.
+            <span
+              className="landing-page-break"
+            >
+              That's 30 days a year spent on cooking alone!
+            </span>
+            <span
+              className="landing-page-break"
+            >
+              Our recipes has less than 5 ingredient and fewer than 7 short steps to have your stomach filled
+            </span>
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
     <section
       className="landing-page-my-info"
     >
       <p
         className="landing-page-my-name"
       >
-        Created by Daniel Laufenberg.
+        Created by Daniel Laufenberg
       </p>
-      <p
-        className="landing-page-links"
+      <div
+        className="github-and-linkedIn-links-mobile"
       >
-        Github : LinkedIn
-      </p>
+        <a
+          href="https://github.com/ddlanf"
+          target="_blank"
+        >
+          <i
+            className="fa"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/daniel-laufenberg/"
+          target="_blank"
+        >
+          <i
+            className="fa"
+          />
+        </a>
+      </div>
+      <div
+        className="github-and-linkedIn-links"
+      >
+        <a
+          href="https://github.com/ddlanf"
+          target="_blank"
+        >
+          <i
+            className="fa"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/daniel-laufenberg/"
+          target="_blank"
+        >
+          <i
+            className="fa"
+          />
+        </a>
+      </div>
       <p
         className="landing-page-copy"
       >

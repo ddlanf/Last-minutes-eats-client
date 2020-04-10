@@ -41,6 +41,7 @@ export default class App extends Component {
                   hasEmailToken={this.state.hasEmailToken}
                 />
             </header>
+            
             <main className="App_main">
               <Switch>
                 <Route

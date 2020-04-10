@@ -11,7 +11,7 @@ export default class ViewAllRecipes extends Component {
     
     renderRecipes(){
         const { recipes } = this.context
-        const allRecipes = recipes.map(recipe =>{
+        const allRecipes = recipes.map((recipe, index) =>{
             return (
                     <li
                         key={recipe.id}
@@ -24,7 +24,7 @@ export default class ViewAllRecipes extends Component {
                                     <p className="view-all-recipes-rating">{this.makeStars(recipe.overall_rating)}</p>
                                     <h3 className="view-all-recipes-recipe-name">{recipe.recipe_name}</h3>
                                     <div className="view-all-recipes-recipe-details">
-                                        <p className="view-all-recipes-preparation-time">{recipe.preparation_time}{recipe.preparation_time_unit.slice(0, 3)}</p>
+                                        <p className="view-all-recipes-preparation-time">{recipe.preparation_time} {recipe.preparation_time_unit.slice (0, 3)}</p>
                                         <p className="view-all-recipes-amount-of-steps">{recipe.steps.length} steps</p>
                                         <p className="view-all-recipes-amount-of-ingredients">{recipe.ingredients.length} ingredients</p>
                                     </div>
@@ -71,9 +71,6 @@ export default class ViewAllRecipes extends Component {
        
         return (
             <>
-               <section className="view-all-recipes-logo">
-                    <div className="view-all-recipes-logo-food-image">Logo</div>
-               </section>  
                <section className="view-all-recipes-recipes">
                     <ul className="view-all-recipes-lists">
                         {this.renderRecipes()}

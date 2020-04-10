@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
+import Logo from '../Logo/Logo'
 import "./Nav.css"
 
 class Nav extends Component {
@@ -37,8 +38,19 @@ class Nav extends Component {
                         className="nav-bar-left-nav-link"
                         to='/view-all-recipes'
                         >
-                        Last Minute Eats
+                        Last Minute 
+                            <span className="nav-break">Eats</span>
                     </Link>
+                    <Route  exact path="/">
+                        <div className="get-started">
+                            <div className="get-started-arrow">↑</div>
+                            <p className="get-started-text">Click here to get started!</p>
+                        </div>
+                    </Route>
+                </div>
+                <div className="logo-container">
+                    <div className="line"></div>
+                    <img className="last-minute-eats-logo" src={require('../../images/logo.png')} alt="logo"/>
                 </div>
                 <div className="nav-bar-right-nav">
                     {this.rendorRightNavBar()}

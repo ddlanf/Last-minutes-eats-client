@@ -13,215 +13,45 @@ exports[`Make component renders the UI as expected 1`] = `
     className="make-recipe-form"
     onSubmit={[Function]}
   >
-    <label
-      className="make-recipe-label"
-    >
-      Recipe Name
-    </label>
-    <input
-      className="make-recipe-input"
-      name="recipe_name"
-      onChange={[Function]}
-      type="text"
-    />
-    <label
-      className="make-recipe-label"
-    >
-      Recipe Image Link
-    </label>
-    <input
-      className="make-recipe-input"
-      name="image"
-      onChange={[Function]}
-      type="text"
-    />
     <div
-      className="make-recipe-ingredients-and-steps"
+      className="make-recipe-top-field"
     >
       <div
-        className="make-recipe-ingredients-input"
+        className="make-recipe-name-field"
       >
         <label
           className="make-recipe-label"
         >
-          Ingredients
+          Recipe Name
         </label>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "block",
-            }
-          }
-        >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="ingredient-1"
-            onChange={[Function]}
-            type="text"
-          />
-          
-        </div>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="ingredient-1"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            -
-          </button>
-        </div>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="ingredient-1"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            -
-          </button>
-        </div>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="ingredient-1"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            -
-          </button>
-        </div>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          
-          <input
-            className="make-recipe-variable-input"
-            name="ingredient-1"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            -
-          </button>
-        </div>
+        <input
+          className="make-recipe-input"
+          name="recipe_name"
+          onChange={[Function]}
+          type="text"
+        />
       </div>
       <div
-        className="make-recipe-instructions-input"
+        className="make-recipe-image-field"
+      >
+        <label
+          className="make-recipe-label"
+        >
+          Recipe Image Link
+        </label>
+        <input
+          className="make-recipe-input"
+          name="image"
+          onChange={[Function]}
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      className="make-recipe-ingredients-and-steps"
+    >
+      <div
+        className="make-recipe-instructions-field"
       >
         <label
           className="make-recipe-label"
@@ -229,255 +59,445 @@ exports[`Make component renders the UI as expected 1`] = `
           Instructions
         </label>
         <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "block",
-            }
-          }
+          className="make-recipe-instructions-input-box"
         >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
+          <div
+            className="make-recipe-button-and-text"
             style={
               Object {
                 "display": "block",
               }
             }
-            type="button"
           >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="step-1"
-            onChange={[Function]}
-            type="text"
-          />
-          
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <textarea
+              className="make-recipe-variable-input"
+              name="step-1"
+              onChange={[Function]}
+              type="text"
+            />
+            
+          </div>
+          <div
+            className="make-recipe-button-and-text"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <textarea
+              className="make-recipe-variable-input"
+              name="step-2"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              -
+            </button>
+          </div>
+          <div
+            className="make-recipe-button-and-text"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <textarea
+              className="make-recipe-variable-input"
+              name="step-3"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              -
+            </button>
+          </div>
+          <div
+            className="make-recipe-button-and-text"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <textarea
+              className="make-recipe-variable-input"
+              name="step-4"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              -
+            </button>
+          </div>
+          <div
+            className="make-recipe-button-and-text"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <textarea
+              className="make-recipe-variable-input"
+              name="step-5"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              -
+            </button>
+          </div>
+          <div
+            className="make-recipe-button-and-text"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <textarea
+              className="make-recipe-variable-input"
+              name="step-6"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              -
+            </button>
+          </div>
+          <div
+            className="make-recipe-button-and-text"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            
+            <textarea
+              className="make-recipe-variable-input"
+              name="step-7"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              -
+            </button>
+          </div>
         </div>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
+      </div>
+      <div
+        className="make-recipe-ingredients-field"
+      >
+        <label
+          className="make-recipe-label"
         >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="step-2"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            -
-          </button>
-        </div>
+          Ingredients
+        </label>
         <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
+          className="make-recipe-ingredients-input-box"
         >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
+          <div
+            className="make-recipe-button-and-text"
             style={
               Object {
                 "display": "block",
               }
             }
-            type="button"
           >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="step-3"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <input
+              className="make-recipe-variable-input"
+              name="ingredient-1"
+              onChange={[Function]}
+              type="text"
+            />
+            
+          </div>
+          <div
+            className="make-recipe-button-and-text"
             style={
               Object {
-                "display": "block",
+                "display": "none",
               }
             }
-            type="button"
           >
-            -
-          </button>
-        </div>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <input
+              className="make-recipe-variable-input"
+              name="ingredient-1"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              -
+            </button>
+          </div>
+          <div
+            className="make-recipe-button-and-text"
             style={
               Object {
-                "display": "block",
+                "display": "none",
               }
             }
-            type="button"
           >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="step-4"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <input
+              className="make-recipe-variable-input"
+              name="ingredient-1"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              -
+            </button>
+          </div>
+          <div
+            className="make-recipe-button-and-text"
             style={
               Object {
-                "display": "block",
+                "display": "none",
               }
             }
-            type="button"
           >
-            -
-          </button>
-        </div>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
+            <button
+              className="make-recipe-plus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              +
+            </button>
+            <input
+              className="make-recipe-variable-input"
+              name="ingredient-1"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              -
+            </button>
+          </div>
+          <div
+            className="make-recipe-button-and-text"
             style={
               Object {
-                "display": "block",
+                "display": "none",
               }
             }
-            type="button"
           >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="step-5"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
+            
+            <input
+              className="make-recipe-variable-input"
+              name="ingredient-1"
+              onChange={[Function]}
+              type="text"
+            />
+            <button
+              className="make-recipe-minus"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
               }
-            }
-            type="button"
-          >
-            -
-          </button>
-        </div>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          <button
-            className="make-recipe-plus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            +
-          </button>
-          <input
-            className="make-recipe-variable-input"
-            name="step-6"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            -
-          </button>
-        </div>
-        <div
-          className="make-recipe-button-and-text"
-          style={
-            Object {
-              "display": "none",
-            }
-          }
-        >
-          
-          <input
-            className="make-recipe-variable-input"
-            name="step-7"
-            onChange={[Function]}
-            type="text"
-          />
-          <button
-            className="make-recipe-minus"
-            onClick={[Function]}
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-            type="button"
-          >
-            -
-          </button>
+              type="button"
+            >
+              -
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -522,7 +542,7 @@ exports[`Make component renders the UI as expected 1`] = `
       Submit
     </button>
     <button
-      className="edit-recipe-submit"
+      className="make-recipe-back"
       onClick={[Function]}
       type="button"
     >

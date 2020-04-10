@@ -5,37 +5,157 @@
     right: 0;
     width: 100%;
     margin: 0;
-    height: 12vw;
+    height: 6vw;
     max-height: 100px;
     z-index: 10;
-    position: relative;
+    
 }
 
 .nav-bar-left-nav, .nav-bar-right-nav{
     position: absolute;
     text-align: left;
-    padding-top: 3.5%;
-    font-size: 4.5vw;
+    font-size: 15px;
 }
 
+
 .nav-bar-left-nav{
-    left: 0;
-    padding-left: 2.5%
+    padding-left: 3%;
+    padding-top: 4px;
+    width: 130px;
 }
 
 .nav-bar-right-nav{
     right: 0;
+    padding-top: 15px;
     padding-right: 3%;
 }
 
 a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
+.nav-break{
+    display: block;
+    margin-left: 23%;
+}
+
+.logo-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.line{
+    width: 100%;
+    min-height: 50px;
+    height: 13vw;
+    max-height: 50px;
+    background-color: #002D52;
+    position: absolute;
+    z-index: -10;
+    
+}
+
+.get-started{
+    margin-right: 11%;
+    opacity: 0;
+    animation: appear 1s 5s forwards;
+}
+
+.get-started-arrow{
+    margin-left: 25px;
+    font-size: 50px;
+    color: black;
+    margin-bottom: 0;
+    position: relative;
+    animation: upAndDown 1s linear 3s infinite;
+}
+
+.get-started-text{
+    width: 60%;
+    margin-left: 0%;
+    margin-top: -5px;
+    text-align: center;
+    font-size: 12px;
+    color: blue;
+    font-weight: bold;
+}
+
+@keyframes upAndDown {
+    0% { top: -5px}
+    50% { top: 0px}
+    100% { top: -5px}
+}
+
+@keyframes appear {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+img.last-minute-eats-logo{
+    margin-top: 1.6px;
+    width: 15vw;
+    max-width: 70px;
+}
+
 @media screen and (min-width: 1000px) {
-    .nav-bar-right-nav, .nav-bar-left-nav{
-        padding-top: 1.8vw;
-        font-size: 2.4rem;
+
+    
+    .nav-bar-left-nav, .nav-bar-right-nav{
+        font-size: 28px;
+        padding-top: 20px;
+    }
+    
+    .nav-break{
+        display: inline;
+    }
+    
+    .nav-bar-left-nav{
+        padding-left: 3%;
+        padding-top: 30px;
+        width: 300px;
+    }
+    
+    .nav-bar-right-nav{
+        right: 0;
+        padding-top: 30px;
+        padding-right: 3%;
+    }
+    
+    .nav-break{
+        display: inline;
+        margin-left: 6px;
+    }
+
+    img.last-minute-eats-logo{
+        margin-top: 1.6px;
+        width: 12vw;
+        max-width: 150px;
+    }
+    
+    .line{
+        min-height: 50px;
+        height: 8vw;
+        max-height: 100px;
+    }
+    
+    .get-started-arrow{
+        position: relative;
+        margin-top: 10px;
+        left: 80px;
+        font-size: 5vw;
+        position: relative;
+        animation: upAndDown 1s linear 3s infinite;
+    }
+    
+    .get-started-text{
+        width: 500px;
+        margin-left: 0%;
+        text-align: center;
+        font-size: 30px;
+        position: relative;
+        bottom: 10px;
     }
 }

@@ -3,13 +3,6 @@
 exports[`Make component renders the UI as expected 1`] = `
 Array [
   <section
-    className="view-recipe-logo"
-  >
-    <div
-      className="view-recipe-food-image"
-    />
-  </section>,
-  <section
     className="view-recipe-recipe"
   >
     <div

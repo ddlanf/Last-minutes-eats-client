@@ -24,7 +24,7 @@ input[type=number] {
     max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3%;
+    margin-top: 20%;
     text-align: center;
 }
 
@@ -57,10 +57,13 @@ input[type=number] {
 }
 
 .edit-recipe-instructions-input-box{
-    height: 23vw;
+    height: 50vw;
     width: 100%;
     font-size: 3vw;
+    padding-top: 4%;
+    padding-bottom: 8%;
     overflow-y: auto;
+    margin-top: ;
     margin-left: auto;
     margin-right: auto;
 }
@@ -91,49 +94,72 @@ input.edit-recipe-variable-input{
     border: 1px solid black;
 }
 
+textarea{
+    resize: none;
+    overflow:hidden;
+}
+
 textarea.edit-recipe-variable-input{
     width: 80%;
     font-size: 4.5vw;
-    height: 18vw;
+    height: 22vw;
     border: 1px solid black;
+}
+
+.edit-recipe-number{
+    position: absolute;
+    bottom: 68%;
+    left: 5%;
+    font-size: 5vw;
 }
 
 .edit-recipe-plus{
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
     border-radius: 100%;
     height: 6vw;
     width: 6vw;
-    font-size: 4vw;
+    font-size: 5vw;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: none;
+    color: white;
+    background-color:#006691;
+}
+
+.edit-recipe-plus:active, .edit-recipe-minus:active{
+    color: black;
 }
 
 .edit-recipe-minus{
     position: absolute;
-    right: 0;
+    left: 0;
     bottom: 0;
     height: 6vw;
     width: 6vw;
-    font-size: 4vw;
+    font-size: 5vw;
     border-radius: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgb(197, 37, 37);
+    border: none;
+    color: white;
 }
 
 .edit-recipe-preparation-time-label{
     display: block;
+    margin-top: 6vw;
     font-size: 4vw;
 }
 
 .edit-recipe-preparation-time-box{
-    margin-top: 1%;
+    margin-top: 3%;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -169,8 +195,26 @@ textarea.edit-recipe-variable-input{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
-    font-size: 3vw;
+    margin-top: 10%;
+    padding: 2%;
+    font-size: 6vw;
+}
+
+.edit-recipe-submit{
+    background-color: #209463;
+    border: none;
+    border-radius: 3rem;
+    padding: .5rem 2rem;
+    color: rgb(42, 48, 71);
+}
+
+.edit-recipe-back{
+    background-color: #696969;
+    border: none;
+    border-radius: 2.6rem;
+    padding: .5rem 1.5rem;
+    color: rgb(37, 43, 68);
+    
 }
 
 
@@ -178,6 +222,7 @@ textarea.edit-recipe-variable-input{
 
     .edit-recipe{
         width: 100%;
+        margin-top: 10%;
     }
 
     .edit-recipe-top-field{
@@ -191,7 +236,11 @@ textarea.edit-recipe-variable-input{
         margin-top: 1vw;
     }
 
-    .edit-recipe-ingredients-and-steps{
+    .instructions.edit-recipe-label{
+        margin-bottom: 0;
+    }
+
+    .edit-recipe-ingredients-and-instructions{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -206,6 +255,10 @@ textarea.edit-recipe-variable-input{
     .edit-recipe-minus, .edit-recipe-plus{
         height: 45px;
         width:  45px;
+        font-size: 40px;
+    }
+
+    .edit-recipe-number{
         font-size: 40px;
     }
   
@@ -239,7 +292,7 @@ textarea.edit-recipe-variable-input{
     textarea.edit-recipe-variable-input{
         font-size: 3vw;
         width: 80%;
-        height: 12vw;
+        height: 10vw;
     }
 
     .edit-recipe-error, .edit-recipe-buffer{
@@ -249,6 +302,7 @@ textarea.edit-recipe-variable-input{
 
     .edit-recipe-preparation-time-label{
         display: block;
+        margin-top: 2%;
         font-size: 3vw;
     }
 
@@ -260,5 +314,8 @@ textarea.edit-recipe-variable-input{
         width: 5%;
     }
 
-
+    .edit-recipe-submit, .edit-recipe-back{
+        margin-top: 5vw;
+        font-size: 3vw;
+    }
 }

@@ -63,9 +63,6 @@ class ViewRecipe extends Component {
 
         return (
             <>
-                <section className="view-recipe-logo">
-                    <div className="view-recipe-food-image"></div>
-                </section>
                 <section className="view-recipe-recipe">
                     <div className="view-recipe-main">
                         <h1 className="view-recipe-recipe-name-desktop">{recipe.recipe_name}</h1>
@@ -89,14 +86,16 @@ class ViewRecipe extends Component {
                             {this.makeStars(recipe.overall_rating)}
                         </div>
                         <h2 className="view-recipe-preparation-time-mobile">
-                            {recipe.preparation_time + recipe.preparation_time_unit.slice(0, 3)}
+                            {recipe.preparation_time} {recipe.preparation_time_unit.slice(0, 3)}
                         </h2>
                         <h2 className="view-recipe-ingredients-header">Ingredients</h2>
-                        <ul className="view-recipe-ingredients">
+                        <ul 
+                            className={`view-recipe-ingredients  ${(recipe.ingredients.length <= 3) ? 'short-list' : 'long-list'}`}>
                             {this.makeIngredientsList(recipe.ingredients)}
                         </ul>
                         <h2>Instructions</h2>
-                        <ol className="view-recipe-instructions">
+                        <ol className={`view-recipe-instructions
+                         ${(recipe.steps.length <= 4) ? 'short-list' : 'long-list'}`}>
                             {this.makeStepsList(recipe.steps)}
                         </ol>
                     </div>

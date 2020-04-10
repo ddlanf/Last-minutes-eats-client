@@ -1,22 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Make component renders the UI as expected 1`] = `
-Array [
-  <section
-    className="view-all-recipes-logo"
-  >
-    <div
-      className="view-all-recipes-logo-food-image"
-    >
-      Logo
-    </div>
-  </section>,
-  <section
-    className="view-all-recipes-recipes"
-  >
-    <ul
-      className="view-all-recipes-lists"
-    />
-  </section>,
-]
+<section
+  className="view-all-recipes-recipes"
+>
+  <ul
+    className="view-all-recipes-lists"
+  />
+</section>
 `;

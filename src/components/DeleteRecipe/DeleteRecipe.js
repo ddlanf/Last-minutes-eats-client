@@ -73,14 +73,14 @@ class DeleteRecipe extends Component {
                 {this.state.submitted ?
                     <Link
                         to={`/view-all-recipes`}
-                        className="delete-recipe-link"
+                        className="delete-recipe-back"
                         >
                         Back
                     </Link>
                     :
                     <Link
                         to={`/view-recipe/${recipeId}`}
-                        className="delete-recipe-link"
+                        className="delete-recipe-back"
                         >
                         Back
                     </Link>}

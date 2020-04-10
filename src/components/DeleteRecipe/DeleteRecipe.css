@@ -2,22 +2,44 @@
     margin-left: auto; 
     margin-right: auto; 
     display: block; 
-    width: 100%; 
     position: fixed;
-    width:100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     height:100%;
     padding-top: 20%;
-    top: 0;
+    top: -900px;
     left: 0;
     z-index:1000;
-    background-color: grey;
+    background-image: url("../../images/cutting-board.png");
+    background-repeat: no-repeat;
+    background-position: center;    
+    background-size: cover;
     text-align: center; 
+    animation-name: slide-down;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes slide-down{
+    0% { top: -900px}
+    90%{ top: 0}
+    92%{ top: 30px }
+    94%{ top: 0px }
+    96%{ top: 20px }
+    98%{ top: 0}
+    99%{ top: 10px }
+    100%{ top: 0}
 }
 
 .delete-recipe-label{
     font-size: 7vw;
     margin-bottom: 2vw;
     display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .delete-recipe-input{
@@ -26,24 +48,34 @@
     max-width: 800px;
 }
 
-.delete-recipe-link{
-    display: block;
-    margin-top: 10%;
-    font-size: 8vw;
-}
-
-a.delete-recipe-link{
-    color: black;
-    text-decoration: none;
-}
-
 .delete-recipe-submit{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    background-color: transparent;
+    border: 1.5px solid #209463;
+    border-radius: 3rem;
+    padding: .5rem 2rem;
+    color:  #209463;
+    font-size: 6vw;
     margin-top: 5%;
-    font-size: 5vw;
 }
+
+a.delete-recipe-back{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border: 1.5px solid rgb(99, 99, 99);
+    color: rgb(99, 99, 99);
+    width: 30%;
+    text-decoration: none;
+    border-radius: 3rem;
+    padding: .5rem 1.5rem;
+    font-size: 6vw;
+    margin-top: 5%;
+}
+
 
 .delete-recipe-error{
     color: red;
