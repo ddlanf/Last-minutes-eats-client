@@ -70,7 +70,7 @@ a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
     color: black;
     margin-bottom: 0;
     position: relative;
-    animation: upAndDown 1s linear 3s infinite;
+    animation: upAndDown 1s linear 2s infinite;
 }
 
 .get-started-text{
