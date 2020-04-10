@@ -3,8 +3,8 @@
 Website Link: [https://last-minute-eats.now.sh](https://last-minute-eats.now.sh)
 
 ## Image
-![Screenshot1](/images/last-minute-eats.png)
-![Screenshot2](/images/last-minute-eats2.png)
+![Screenshot1](/src/images/last-minute-eats.png)
+![Screenshot2](/src/images/last-minute-eats2.png)
 
 ## Core Features
 This serves the client side of the Last Minute Eats app.
