@@ -218,7 +218,6 @@ class EditRecipe extends Component {
                         .catch(res=>{ this.context.setError(res.error)})
                 })
                 .catch((res) => {
-                        console.log("hello")
                         this.setState({ error: res.error, buffer: false })
                 })
         }

@@ -11,6 +11,7 @@ export default class StarRating extends Component {
        
        super(props)
        const { recipeId } = this.props
+       //Check if user has already submitted rating
        const ratingToken = TokenService.getRatingToken(recipeId)
        this.state = {
             stars: !!ratingToken ?  this.returnStarArray(parseInt(ratingToken.slice(0, ratingToken.indexOf(':')))) : [false, false, false, false, false],
@@ -52,10 +53,13 @@ export default class StarRating extends Component {
         }
     }
 
+  
     submitRating = (rating) =>{
+
         
         const { recipeId } = this.props
 
+        //When the user first submits rating it will send a POST request. 
         if(!this.state.disabled){
             const newRating = { rating }
             const newState = this.state.stars
@@ -71,6 +75,7 @@ export default class StarRating extends Component {
             })
             .catch(res =>{ this.setState({ error: res.error})})
         }
+        //If user submits the rating again send PATCH request
         else{
 
             const currentRating = TokenService.getRatingToken(recipeId)
