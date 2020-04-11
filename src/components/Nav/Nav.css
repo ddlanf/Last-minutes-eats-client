@@ -85,7 +85,7 @@ a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
     font-size: 3.5vw;
     color: blue;
     font-weight: bold;
-    font-family: 'Baloo Tamma 2' cursive;
+    font-family: 'Baloo Tamma 2';
 }
 
 @keyframes upAndDown {
@@ -198,6 +198,7 @@ a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
     }
     
     .get-started-text{
+        font-family: 'Baloo Tamma 2' cursive;
         width: 500px;
         margin-left: -20%;
         text-align: center;
