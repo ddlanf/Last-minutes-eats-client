@@ -188,7 +188,7 @@ exports[`App component renders the UI as expected 1`] = `
             <h1
               className="landing-page-heading-text"
             >
-              Woke up late to work in the morning or just feel to lazy to prepare a whole meal?
+              Woke up late to work in the morning or too lazy to prepare a whole meal?
               <span
                 className="landing-page-break"
               >
@@ -221,7 +221,7 @@ exports[`App component renders the UI as expected 1`] = `
               <span
                 className="landing-page-break"
               >
-                Our recipes has less than 5 ingredient and fewer than 7 short steps to have your stomach filled.
+                Our recipes have less than 5 ingredients and no more than 7 short steps to have your stomach filled.
               </span>
             </div>
           </section>

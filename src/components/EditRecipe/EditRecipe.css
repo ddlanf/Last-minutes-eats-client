@@ -187,6 +187,7 @@ textarea.edit-recipe-variable-input{
     font-size: 5vw;
     border: none;
     border-bottom: 1px solid black;
+    cursor: pointer;
 }
 
 .edit-recipe-error, .edit-recipe-buffer{

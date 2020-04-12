@@ -74,6 +74,7 @@ a.view-recipe-edit, a.view-recipe-back{
     margin-left: auto;
     margin-bottom: 5%;
     text-align: center;
+    cursor: pointer;
 }
 
 .view-recipe-preparation-time-mobile{
@@ -197,7 +198,7 @@ a.view-recipe-edit, a.view-recipe-back{
         margin-top: 0;
     }  
 
-    a.view-recipe-delete{
+    .view-recipe-delete{
         font-size: 2.2vw;
     }
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Edit component renders the UI as expected 1`] = `
+exports[`EditRecipeGate component renders the UI as expected 1`] = `
 <section
   className="edit-recipe-gate"
 >

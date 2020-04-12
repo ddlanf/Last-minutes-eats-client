@@ -1,27 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap");
 
-.sign-up-form > *, 
-.delete-recipe-form > *, 
 .landing-page > *, 
 .edit-recipe > *, 
 .make-recipe > *,
 .not-found-page,
 .view-all-recipes-recipes > *,
-.view-recipe-recipe > *,
-.edit-recipe-gate > * {
+.view-recipe-recipe > *{
     font-family: 'Baloo Tamma 2';
 }
 
 @media screen and (min-width: 1000px) {
-    .sign-up-form > *, 
-    .delete-recipe-form > *, 
     .landing-page > *, 
     .edit-recipe > *, 
     .make-recipe > *,
     .not-found-page,
     .view-all-recipes-recipes > *,
-    .view-recipe-recipe > *,
-    .edit-recipe-gate > *{
+    .view-recipe-recipe > *{
         font-family: 'Baloo Tamma 2' cursive;
     }
 }

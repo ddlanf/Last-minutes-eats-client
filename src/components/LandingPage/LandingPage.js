@@ -68,7 +68,7 @@ export default class LandingPage extends Component {
                         <div className="landing-page-headings">
                             <section className="landing-page-heading first">
                                 <h1 className="landing-page-heading-text">
-                                    Woke up late to work in the morning or just feel to lazy to prepare a whole meal?
+                                 Woke up late to work in the morning or too lazy to prepare a whole meal?
                                     <span className="landing-page-break">
                                     Last Minute Eats has the perfect recipes for you
                                     </span>
@@ -88,7 +88,7 @@ export default class LandingPage extends Component {
                                         That's 30 days a year spent on cooking alone!
                                     </span>
                                     <span className="landing-page-break">
-                                        Our recipes has less than 5 ingredient and fewer than 7 short steps to have your stomach filled.
+                                         Our recipes have less than 5 ingredients and no more than 7 short steps to have your stomach filled.
                                     </span>
                                 </div>
                             </section>

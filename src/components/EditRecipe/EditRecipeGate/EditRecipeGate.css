@@ -8,7 +8,7 @@
     margin-right: auto;
     height:100%;
     padding-top: 20%;
-    top: -900px;
+    top: -2000px;
     left: 0;
     z-index:1000;
     background-color: rgba(0, 45, 82, 0.616);
@@ -27,7 +27,7 @@
 }
 
 @keyframes slide-down{
-    0% { top: -900px}
+    0% { top: -2000px}
     90%{ top: 0}
     92%{ top: 30px }
     94%{ top: 0px }
@@ -39,7 +39,7 @@
 
 @keyframes slide-up{
     0% { top: 0}
-    100%{ top: -900px; display: none; }
+    100%{ top: -2000px; display: none; }
 }
 
 .edit-recipe-gate-label{
@@ -72,9 +72,7 @@
     margin-top: 5%;
     width: 40%;
     max-width: 350px;
-    font-family: 'Baloo Tamma 2';
 }
-
 
 a.edit-recipe-gate-back{
     cursor: pointer;
@@ -114,7 +112,7 @@ a.edit-recipe-gate-back{
 
 @media screen and (min-width: 550px){
     .edit-recipe-gate-form{
-       padding-top: 10%;
+       padding-top: 3%;
     }
 }
 
@@ -122,27 +120,25 @@ a.edit-recipe-gate-back{
 @media screen and (min-width: 1000px){
 
     .edit-recipe-gate-form{
-        padding-top: 7%;
+        padding-top: 3%;
      }
 
     .edit-recipe-gate-label{
-        font-size: 5vw;
-        margin-top: 6vw;
+        font-size: 4vw;
         margin-bottom: 5%;
     }
 
     .edit-recipe-gate-input{
-        font-size: 5vw;
+        font-size: 4vw;
+        width: 40%;
     }
 
     .edit-recipe-gate-submit{
-        font-size: 70px;
-        font-family: 'Baloo Tamma 2';
-
+        font-size: 50px;
     }
 
     a.edit-recipe-gate-back{
-        font-size: 70px;
+        font-size: 50px;
         padding: 0.5%;
     }
 
