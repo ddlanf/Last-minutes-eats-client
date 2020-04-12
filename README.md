@@ -11,11 +11,10 @@ This serves the client side of the Last Minute Eats app.
 The pages this app provides include
 * Landing Page - Landing page for Last Minute Eats app
 * ViewAllRecipes - A list of all the recipes
-* SignUp - Sign up page for new users
 * MakeRecipe - for making a new recipe
 * Edit Recipe - for editting an existing recipe
-* Delete Recipe - for deleting a recipe
 * ViewRecipe - Show the details of an individual recipe
+* NotFoundPage - for unsupported endpoints
 
 **This is a project created with React. It uses Font Awesome for logos and stars, and vanilla CSS for styling and animation**
 

@@ -11,12 +11,19 @@
     top: -900px;
     left: 0;
     z-index:1000;
-    background-color: rgba(0, 45, 82, 0.438);
+    background-color: rgba(0, 45, 82, 0.616);
     text-align: center; 
     animation-name: slide-down;
     animation-fill-mode: forwards;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
+}
+
+.slide-up{
+    animation-name: slide-up;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
 }
 
 @keyframes slide-down{
@@ -30,6 +37,11 @@
     100%{ top: 0}
 }
 
+@keyframes slide-up{
+    0% { top: 0}
+    100%{ top: -900px; display: none; }
+}
+
 .delete-recipe-label{
     font-size: 7vw;
     margin-bottom: 2vw;
@@ -37,6 +49,7 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    color: white;
 }
 
 .delete-recipe-input{
@@ -50,34 +63,43 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: transparent;
+    background-color: #209463;
     border: 1.5px solid #209463;
+    color: white;
     border-radius: 3rem;
     padding: .5rem 2rem;
-    color:  #209463;
     font-size: 6vw;
     margin-top: 5%;
+    width: 40%;
+    max-width: 350px;
 }
 
-a.delete-recipe-back{
+.delete-recipe-back{
+    cursor: pointer;
     display: block;
+    text-decoration: none;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    background-color: transparent;
+    background-color: rgb(99, 99, 99);
     border: 1.5px solid rgb(99, 99, 99);
-    color: rgb(99, 99, 99);
-    width: 25%;
-    text-decoration: none;
+    color: white;
     border-radius: 3rem;
+    padding: 1%;
     font-size: 6vw;
     margin-top: 5%;
+    width: 32%;
+    max-width: 300px;
 }
 
 
 .delete-recipe-error{
     color: red;
     font-size: 5vw;
+    background-color: #002D52;
+    width: 50%;
+    border-radius: 30%;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 2%;
 }
 
@@ -88,29 +110,36 @@ a.delete-recipe-back{
     font-size: 4.2vw;
 }
 
+@media screen and (min-width: 550px){
+    .delete-recipe-form{
+       padding-top: 10%;
+    }
+}
+
+
 @media screen and (min-width: 1000px){
+
+    .delete-recipe-form{
+        padding-top: 7%;
+     }
+
     .delete-recipe-label{
-        font-size: 4vw;
-        margin-top: 10vw;
+        font-size: 5vw;
+        margin-top: 6vw;
         margin-bottom: 5%;
     }
 
     .delete-recipe-input{
-        font-size: 4vw;
-    }
-
-    .delete-recipe-link{
-        margin-top: 5%;
-        font-size: 3vw;
+        font-size: 5vw;
     }
 
     .delete-recipe-submit{
-        font-size: 3vw;
-        margin-top: 3%;
+        font-size: 70px;
     }
 
-    .delete-recipe-form{
-        padding-top: 8%;
+    .delete-recipe-back{
+        font-size: 70px;
+        padding: 0.5%;
     }
 
     .delete-recipe-error{
@@ -122,8 +151,4 @@ a.delete-recipe-back{
         width: 100%;
     }
 
-    a.delete-recipe-back{
-        font-size: 3.5vw;
-        width: 13%;
-    }
 }

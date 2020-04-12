@@ -63,11 +63,13 @@ a.view-recipe-edit, a.view-recipe-back{
     margin-bottom: 3%;
 }
 
-a.view-recipe-delete{
+.view-recipe-delete{
     display: block;
+    background-color: white;
+    border: white solid 1px;
     color: red;
     text-decoration: none;
-    font-size: 4vw;
+    font-size: 3.5vw;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 5%;

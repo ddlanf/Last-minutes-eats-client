@@ -1,0 +1,154 @@
+.sign-up-form{ 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block; 
+    position: fixed;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height:100%;
+    padding-top: 20%;
+    top: -900px;
+    left: 0;
+    z-index:1000;
+    background-color: rgba(0, 45, 82, 0.616);
+    text-align: center; 
+    animation-name: slide-down;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+
+.slide-up{
+    animation-name: slide-up;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes slide-down{
+    0% { top: -900px}
+    90%{ top: 0}
+    92%{ top: 30px }
+    94%{ top: 0px }
+    96%{ top: 20px }
+    98%{ top: 0}
+    99%{ top: 10px }
+    100%{ top: 0}
+}
+
+@keyframes slide-up{
+    0% { top: 0}
+    100%{ top: -900px; display: none; }
+}
+
+.sign-up-label{
+    font-size: 7vw;
+    margin-bottom: 2vw;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.sign-up-input{
+    font-size: 6vw;
+    width: 50%;
+    max-width: 800px;
+}
+
+.sign-up-submit{
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #209463;
+    border: 1.5px solid #209463;
+    color: white;
+    border-radius: 3rem;
+    padding: .5rem 2rem;
+    font-size: 6vw;
+    margin-top: 5%;
+    width: 40%;
+    max-width: 350px;
+}
+
+.sign-up-back{
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(99, 99, 99);
+    border: 1.5px solid rgb(99, 99, 99);
+    color: white;
+    border-radius: 3rem;
+    padding: 1%;
+    font-size: 6vw;
+    margin-top: 5%;
+    width: 32%;
+    max-width: 300px;
+}
+
+
+.sign-up-error{
+    color: red;
+    font-size: 5vw;
+    background-color: #002D52;
+    width: 50%;
+    border-radius: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2%;
+}
+
+.sign-up-submitted{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4.2vw;
+}
+
+@media screen and (min-width: 550px){
+    .sign-up-form{
+       padding-top: 10%;
+    }
+}
+
+
+@media screen and (min-width: 1000px){
+
+    .sign-up-form{
+        padding-top: 7%;
+     }
+
+    .sign-up-label{
+        font-size: 5vw;
+        margin-top: 6vw;
+        margin-bottom: 5%;
+    }
+
+    .sign-up-input{
+        font-size: 5vw;
+    }
+
+    .sign-up-submit{
+        font-size: 70px;
+    }
+
+    .sign-up-back{
+        font-size: 70px;
+        padding: 0.5%;
+    }
+
+    .sign-up-error{
+        font-size: 3vw;
+    }
+
+    .sign-up-submitted{
+        font-size:  3vw;
+        width: 100%;
+    }
+
+}

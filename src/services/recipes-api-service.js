@@ -31,11 +31,12 @@ const RecipeApiService = {
             : res.json()
         )
     },
-    editRecipe(recipeId, recipeToUpdate) {
+    editRecipe(recipeId, recipeToUpdate, token) {
       return fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
         method: 'PATCH',
         headers: { 
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'Authorization' : `token ${token}`
         },
         body: JSON.stringify({
           ...recipeToUpdate

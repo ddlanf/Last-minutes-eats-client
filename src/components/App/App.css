@@ -7,7 +7,8 @@
 .make-recipe > *,
 .not-found-page,
 .view-all-recipes-recipes > *,
-.view-recipe-recipe > *{
+.view-recipe-recipe > *,
+.edit-recipe-gate > * {
     font-family: 'Baloo Tamma 2';
 }
 
@@ -19,7 +20,8 @@
     .make-recipe > *,
     .not-found-page,
     .view-all-recipes-recipes > *,
-    .view-recipe-recipe > *{
+    .view-recipe-recipe > *,
+    .edit-recipe-gate > *{
         font-family: 'Baloo Tamma 2' cursive;
     }
 }

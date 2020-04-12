@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom' 
 import './SignUp.css'
-import EmailApiService from '../../services/emails-api-service'
-import TokenService from '../../services/token-service'
+import EmailApiService from '../../../services/emails-api-service'
+import TokenService from '../../../services/token-service'
 
-export default class SignUp extends Component {
+class SignUp extends Component {
 
     constructor(props){
         super(props);
         this.state = { 
             email: '',
             submitted: false,
-            error: ''
+            error: '',
+            back: false
         }
     }
 
@@ -45,13 +45,27 @@ export default class SignUp extends Component {
     }
 
 
+    goBack = () =>{
+        this.setState({ back: true, error: '' })
+    } 
+
+    setDisplayProperty = () =>{
+        if(this.state.back){ 
+            this.props.toggleSignUp(false)
+            this.setState({ back: false }) 
+        }
+    }
+    
     render() {
+
         return (
             <section 
-                className={`sign-up ${this.state.back ? 'slide-up' : ''}`}>
+                className="sign-up">
                 <form
+                    style={{ display: this.props.showSignUp ? 'block' : 'none'}}  
+                    onAnimationEnd={this.setDisplayProperty}
                     onSubmit={this.submitEmail}
-                    className="sign-up-form">
+                    className={`sign-up-form ${this.state.back ? 'slide-up' : ''}`}>
                     <label className="sign-up-label">
                         Please enter your email to get early access to the full version of the App.
                     </label>
@@ -73,13 +87,16 @@ export default class SignUp extends Component {
                         >
                         Submit
                     </button>
-                    <Link 
-                        className="sign-up-back"
-                        to="/">
+                    <button
+                        type="button"
+                        onClick={this.goBack}
+                        className="sign-up-back">
                             Back
-                    </Link>
+                    </button>
                 </form>
             </section>
         )
     }
 }
+
+export default SignUp

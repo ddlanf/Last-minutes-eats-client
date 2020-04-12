@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Link, withRouter} from 'react-router-dom' 
+import { withRouter} from 'react-router-dom' 
 import './DeleteRecipe.css'
-import RecipesApiService from '../../services/recipes-api-service'
+import RecipesApiService from '../../../services/recipes-api-service'
 
 class DeleteRecipe extends Component {
 
@@ -10,7 +10,8 @@ class DeleteRecipe extends Component {
         this.state = { 
             token: '',
             submitted: false,
-            error: ''
+            error: '',
+            back: false
         }
     }
 
@@ -42,14 +43,28 @@ class DeleteRecipe extends Component {
         }
     }
 
-    render() {
+    goBack = () =>{
+        if(this.state.submitted){
+            this.props.history.push('/view-all-recipes')
+        }
+        this.setState({ back: true })
+    } 
 
-        const { recipeId } = this.props.match.params;
+    setDisplayProperty = () =>{
+        if(this.state.back){ 
+            this.props.toggleDeleteRecipe(false)
+            this.setState({ back: false }) 
+        }
+    }
+
+    render() {
 
         return (
             <form
+                style={{ display: this.props.showDeleteRecipe ? 'block' : 'none'}}  
+                onAnimationEnd={this.setDisplayProperty}
                 onSubmit={this.deleteRecipe}
-                className="delete-recipe-form">
+                className={`delete-recipe-form ${this.state.back ? 'slide-up' : ''}`}>
                 <label className="delete-recipe-label">
                     Enter token to delete this recipe
                 </label>
@@ -69,21 +84,13 @@ class DeleteRecipe extends Component {
                     className="delete-recipe-submit"
                     >
                     Submit
+                </button>            
+                <button
+                    onClick={this.goBack}
+                    type="button"
+                    className="delete-recipe-back">                        
+                    Back 
                 </button>
-                {this.state.submitted ?
-                    <Link
-                        to={`/view-all-recipes`}
-                        className="delete-recipe-back"
-                        >
-                        Back
-                    </Link>
-                    :
-                    <Link
-                        to={`/view-recipe/${recipeId}`}
-                        className="delete-recipe-back"
-                        >
-                        Back
-                    </Link>}
             </form>
         )
     }

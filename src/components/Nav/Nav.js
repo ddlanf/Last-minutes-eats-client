@@ -1,8 +1,23 @@
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
+import TokenService from '../../services/token-service'
+import SignUp from './SignUp/SignUp'
 import "./Nav.css"
 
 class Nav extends Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+          hasEmailToken: TokenService.hasEmailToken(),
+          showSignUp : false
+        }
+      }
+
+    toggleSignUp = (showSignUp) =>{
+        this.setState({ showSignUp })
+    }
+
 
     rendorRightNavBar(){
         const rightNavBar = 
@@ -19,44 +34,60 @@ class Nav extends Component {
         rightNavBar.push(
             (<Route
                 exact key={'/'} path={`/`}>
-                {this.props.hasEmailToken ?
-                    '': <Link className="nav-bar-right-nav-link" to="/signup">Sign Up</Link>}
+                {!this.state.hasEmailToken ?
+                        <button 
+                            onClick={() => this.toggleSignUp(true)}
+                            className="nav-bar-right-nav-link" >
+                                Sign Up
+                        </button> : ''}
             </Route>)
         )
 
         return rightNavBar
     }
 
+    userSignedUp = () =>{
+        this.setState({
+          hasEmailToken: true
+        })
+    }
 
     render() {
 
         return (
-            <nav className="nav-bar">
-                <div className="nav-bar-left-nav">
-                    <Link 
-                        className="nav-bar-left-nav-link"
-                        to='/view-all-recipes'
-                        >
-                        Last Minute 
-                            <span className="nav-break">Eats</span>
-                    </Link>
-                    <Route  exact path="/">
-                        <div className="get-started">
-                            <div className="get-started-arrow">↑</div>
-                            <p className="get-started-text">Click here to get started!</p>
-                        </div>
-                    </Route>
-                </div>
-                <div className="logo-container">
-                    <div className="line"></div>
-                    <Link to="/" className="last-minute-eats-logo">
-                        <img  src={require('../../images/logo.png')} alt="logo"/>
-                     </Link>
-                </div>
-                <div className="nav-bar-right-nav">
-                    {this.rendorRightNavBar()}
-                </div>
-            </nav>
+            <>
+                <SignUp
+                    userSignedUp={this.userSignedUp}
+                    toggleSignUp={this.toggleSignUp}
+                    showSignUp={this.state.showSignUp}
+                    hasEmailToken={this.state.hasEmailToken}/>
+                <nav className="nav-bar">
+                    <div className="nav-bar-left-nav">
+                        <Link 
+                            className="nav-bar-left-nav-link"
+                            to='/view-all-recipes'
+                            >
+                            Last Minute 
+                                <span className="nav-break">Eats</span>
+                        </Link>
+                        <Route  exact path="/">
+                            <div className="get-started">
+                                <div className="get-started-arrow">↑</div>
+                                <p className="get-started-text">Click here to get started!</p>
+                            </div>
+                        </Route>
+                    </div>
+                    <div className="logo-container">
+                        <div className="line"></div>
+                        <Link to="/" className="last-minute-eats-logo">
+                            <img  src={require('../../images/logo.png')} alt="logo"/>
+                        </Link>
+                    </div>
+                    <div className="nav-bar-right-nav">
+                        {this.rendorRightNavBar()}
+                    </div>
+                </nav>
+            </>
         )
     }
 }

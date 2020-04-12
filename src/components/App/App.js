@@ -4,14 +4,11 @@ import './App.css'
 import { Route, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import LandingPage from '../LandingPage/LandingPage'
-import SignUp from '../SignUp/SignUp'
 import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import ViewAllRecipes from '../ViewAllRecipes/ViewAllRecipes'
 import ViewRecipe from '../ViewRecipe/ViewRecipe'
 import EditRecipe from '../EditRecipe/EditRecipe'
 import MakeRecipe from '../MakeRecipe/MakeRecipe'
-import DeleteRecipe from '../DeleteRecipe/DeleteRecipe'
-import TokenService from '../../services/token-service'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
@@ -20,26 +17,11 @@ library.add(farStar, fasStar, fab, faStarHalfAlt)
 
 export default class App extends Component {
 
-  constructor(props){
-    super(props)
-    this.state = {
-      hasEmailToken: TokenService.hasEmailToken()
-    }
-  }
-
-  userSignedUp = () =>{
-    this.setState({
-      hasEmailToken: true
-    })
-  }
-
   render() {
     return (
         <div className='App'>
             <header className='App_header'>
-                <Nav 
-                  hasEmailToken={this.state.hasEmailToken}
-                />
+                <Nav />
             </header>
             
             <main className="App_main">
@@ -48,14 +30,6 @@ export default class App extends Component {
                   exact
                   path={'/'}
                   component={LandingPage}
-                />
-                <Route
-                  exact
-                  path={'/signup'}
-                  render={(props) => 
-                        <SignUp {...props} 
-                            hasEmailToken={this.state.hasEmailToken}
-                            userSignedUp={this.userSignedUp}/>}
                 />
                 <Route
                   exact
@@ -76,11 +50,6 @@ export default class App extends Component {
                   exact
                   path={'/make-recipe'}
                   component={MakeRecipe}
-                />
-                <Route
-                  exact
-                  path={'/delete-recipe/:recipeId'}
-                  component={DeleteRecipe}
                 />
                 <Route
                   component={NotFoundPage}

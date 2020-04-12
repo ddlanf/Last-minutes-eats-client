@@ -34,10 +34,21 @@
     font-size: 11px;
 }
 
-a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
+a.nav-bar-right-nav-link, a.nav-bar-left-nav-link, button.nav-bar-right-nav-link{
     color: white;
     text-decoration: none;
     font-family: 'Rock Salt';
+}
+
+button.nav-bar-right-nav-link{
+    background-color: transparent;
+    border: transparent solid 1px;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+button.nav-bar-right-nav-link:focus {
+    outline:0;
 }
 
 .nav-break{
@@ -127,6 +138,11 @@ a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
         font-size: 15px;
     }
 
+    button.nav-bar-right-nav-link{
+        font-size: 15px;
+        margin-top: 0;
+    }
+
     .nav-break{
         display: inline;
         margin-left: 5px;
@@ -155,6 +171,10 @@ a.nav-bar-right-nav-link, a.nav-bar-left-nav-link{
     .nav-bar-left-nav, .nav-bar-right-nav{
         font-size: 28px;
         padding-top: 14px;
+    }
+
+    button.nav-bar-right-nav-link{
+        font-size: 28px;
     }
     
     .nav-break{

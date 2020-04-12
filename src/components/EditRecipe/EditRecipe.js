@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import RecipesApiService from '../../services/recipes-api-service'
 import RecipeContext from '../../contexts/RecipeContext'
-import { withRouter } from 'react-router-dom'
+import { withRouter} from 'react-router-dom'
+import EditRecipeGate from './EditRecipeGate/EditRecipeGate'
 import './EditRecipe.css'
 
 class EditRecipe extends Component {
@@ -34,6 +35,7 @@ class EditRecipe extends Component {
                 { value: '', display: false },
             ],
             changed: false,
+            token: '',
             error : '',
             buffer: false
         }
@@ -172,13 +174,16 @@ class EditRecipe extends Component {
         })
     }
 
+    setToken = (token) => {
+        this.setState({ token })
+    }
     
 
     editRecipe = (e) =>{
         e.preventDefault()
 
         let validRecipe = true
-        const { recipe_name, image, preparation_time, preparation_time_unit } = this.state
+        const { recipe_name, image, preparation_time, preparation_time_unit, token} = this.state
         const newRecipe = { recipe_name, image, preparation_time, preparation_time_unit }
 
         for(let [key, value] of Object.entries(newRecipe)){
@@ -208,7 +213,7 @@ class EditRecipe extends Component {
 
         if(validRecipe){
            this.setState({ buffer : true })
-           RecipesApiService.editRecipe(recipeId, newRecipe)
+           RecipesApiService.editRecipe(recipeId, newRecipe, token)
                 .then(() =>{
                     RecipesApiService.getRecipes()
                         .then(recipes => { 
@@ -266,8 +271,16 @@ class EditRecipe extends Component {
     }
 
     render() {
+
+        const { recipeId } = this.props.match.params;
+
         return (
             <>
+                <EditRecipeGate
+                    token={this.state.token}
+                    setToken={this.setToken}
+                    recipeId={recipeId}
+                />
                 <section className="edit-recipe">
                     <h1 className="edit-recipe-heading">Edit This Recipe</h1>
                     <form className="edit-recipe-form"

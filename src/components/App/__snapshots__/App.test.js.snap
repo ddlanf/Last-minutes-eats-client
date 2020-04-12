@@ -7,6 +7,48 @@ exports[`App component renders the UI as expected 1`] = `
   <header
     className="App_header"
   >
+    <section
+      className="sign-up"
+    >
+      <form
+        className="sign-up-form "
+        onAnimationEnd={[Function]}
+        onSubmit={[Function]}
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        <label
+          className="sign-up-label"
+        >
+          Please enter your email to get early access to the full version of the App.
+        </label>
+        <input
+          className="sign-up-input"
+          name="email"
+          onChange={[Function]}
+          type="text"
+        />
+        
+        
+        <button
+          className="sign-up-submit"
+          disabled={false}
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          className="sign-up-back"
+          onClick={[Function]}
+          type="button"
+        >
+          Back
+        </button>
+      </form>
+    </section>
     <nav
       className="nav-bar"
     >
@@ -60,13 +102,12 @@ exports[`App component renders the UI as expected 1`] = `
       <div
         className="nav-bar-right-nav"
       >
-        <a
+        <button
           className="nav-bar-right-nav-link"
-          href="/signup"
           onClick={[Function]}
         >
           Sign Up
-        </a>
+        </button>
       </div>
     </nav>
   </header>
@@ -147,11 +188,11 @@ exports[`App component renders the UI as expected 1`] = `
             <h1
               className="landing-page-heading-text"
             >
-              Woke up late to work in the morning or feeling lazy to prepare a whole meal?
+              Woke up late to work in the morning or just feel to lazy to prepare a whole meal?
               <span
                 className="landing-page-break"
               >
-                Last minute eats has the perfect recipes for you
+                Last Minute Eats has the perfect recipes for you
               </span>
             </h1>
           </section>

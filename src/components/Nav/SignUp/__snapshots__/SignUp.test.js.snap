@@ -2,11 +2,17 @@
 
 exports[`Make component renders the UI as expected 1`] = `
 <section
-  className="sign-up "
+  className="sign-up"
 >
   <form
-    className="sign-up-form"
+    className="sign-up-form "
+    onAnimationEnd={[Function]}
     onSubmit={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
   >
     <label
       className="sign-up-label"
@@ -28,13 +34,13 @@ exports[`Make component renders the UI as expected 1`] = `
     >
       Submit
     </button>
-    <a
+    <button
       className="sign-up-back"
-      href="/"
       onClick={[Function]}
+      type="button"
     >
       Back
-    </a>
+    </button>
   </form>
 </section>
 `;

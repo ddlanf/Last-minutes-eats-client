@@ -75,11 +75,11 @@ exports[`Make component renders the UI as expected 1`] = `
         <h1
           className="landing-page-heading-text"
         >
-          Woke up late to work in the morning or feeling lazy to prepare a whole meal?
+          Woke up late to work in the morning or just feel to lazy to prepare a whole meal?
           <span
             className="landing-page-break"
           >
-            Last minute eats has the perfect recipes for you
+            Last Minute Eats has the perfect recipes for you
           </span>
         </h1>
       </section>

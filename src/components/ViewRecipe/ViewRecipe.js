@@ -4,11 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RecipesApiService from '../../services/recipes-api-service'
 import RecipeContext from '../../contexts/RecipeContext'
 import StarRating from './StarRating/StarRating'
+import DeleteRecipe from './DeleteRecipe/DeleteRecipe'
 import './ViewRecipe.css'
 
 class ViewRecipe extends Component {
 
     static contextType = RecipeContext
+
+    state = { showDeleteRecipe: false }
 
     makeIngredientsList(ingredients){
         return ingredients.map((ingredient, index) =>{
@@ -43,6 +46,10 @@ class ViewRecipe extends Component {
         return stars
     }
 
+    toggleDeleteRecipe = (showDeleteRecipe) =>{
+        this.setState({ showDeleteRecipe })
+    }
+
     componentDidMount(){
         const { recipeId } = this.props.match.params;
 
@@ -63,6 +70,10 @@ class ViewRecipe extends Component {
 
         return (
             <>
+                <DeleteRecipe
+                    showDeleteRecipe={this.state.showDeleteRecipe}
+                    toggleDeleteRecipe={this.toggleDeleteRecipe}
+                />
                 <section className="view-recipe-recipe">
                     <div className="view-recipe-main">
                         <h1 className="view-recipe-recipe-name-desktop">{recipe.recipe_name}</h1>
@@ -116,12 +127,12 @@ class ViewRecipe extends Component {
                         </Link>
                     </div>
                 </section>  
-                <Link
-                    to={`/delete-recipe/${recipeId}`}
+                <button
+                    onClick={() => this.toggleDeleteRecipe(true)}
                     className="view-recipe-delete"
                     >
                     Delete this recipe
-                </Link>
+                </button>
             </>
         )
     }

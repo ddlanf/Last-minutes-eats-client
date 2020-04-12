@@ -1,66 +1,109 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Make component renders the UI as expected 1`] = `
-<nav
-  className="nav-bar"
->
-  <div
-    className="nav-bar-left-nav"
+Array [
+  <section
+    className="sign-up"
   >
-    <a
-      className="nav-bar-left-nav-link"
-      href="/view-all-recipes"
-      onClick={[Function]}
+    <form
+      className="sign-up-form "
+      onAnimationEnd={[Function]}
+      onSubmit={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
     >
-      Last Minute
-      <span
-        className="nav-break"
+      <label
+        className="sign-up-label"
       >
-        Eats
-      </span>
-    </a>
+        Please enter your email to get early access to the full version of the App.
+      </label>
+      <input
+        className="sign-up-input"
+        name="email"
+        onChange={[Function]}
+        type="text"
+      />
+      
+      
+      <button
+        className="sign-up-submit"
+        disabled={false}
+        type="submit"
+      >
+        Submit
+      </button>
+      <button
+        className="sign-up-back"
+        onClick={[Function]}
+        type="button"
+      >
+        Back
+      </button>
+    </form>
+  </section>,
+  <nav
+    className="nav-bar"
+  >
     <div
-      className="get-started"
+      className="nav-bar-left-nav"
+    >
+      <a
+        className="nav-bar-left-nav-link"
+        href="/view-all-recipes"
+        onClick={[Function]}
+      >
+        Last Minute
+        <span
+          className="nav-break"
+        >
+          Eats
+        </span>
+      </a>
+      <div
+        className="get-started"
+      >
+        <div
+          className="get-started-arrow"
+        >
+          ↑
+        </div>
+        <p
+          className="get-started-text"
+        >
+          Click here to get started!
+        </p>
+      </div>
+    </div>
+    <div
+      className="logo-container"
     >
       <div
-        className="get-started-arrow"
-      >
-        ↑
-      </div>
-      <p
-        className="get-started-text"
-      >
-        Click here to get started!
-      </p>
-    </div>
-  </div>
-  <div
-    className="logo-container"
-  >
-    <div
-      className="line"
-    />
-    <a
-      className="last-minute-eats-logo"
-      href="/"
-      onClick={[Function]}
-    >
-      <img
-        alt="logo"
-        src="logo.png"
+        className="line"
       />
-    </a>
-  </div>
-  <div
-    className="nav-bar-right-nav"
-  >
-    <a
-      className="nav-bar-right-nav-link"
-      href="/signup"
-      onClick={[Function]}
+      <a
+        className="last-minute-eats-logo"
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="logo"
+          src="logo.png"
+        />
+      </a>
+    </div>
+    <div
+      className="nav-bar-right-nav"
     >
-      Sign Up
-    </a>
-  </div>
-</nav>
+      <button
+        className="nav-bar-right-nav-link"
+        onClick={[Function]}
+      >
+        Sign Up
+      </button>
+    </div>
+  </nav>,
+]
 `;

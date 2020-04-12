@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import RecipesApiService from '../../services/recipes-api-service'
 import RecipeContext from '../../contexts/RecipeContext'
+import RecipeTokensApiService from '../../services/recipe-token-api-service'
 import './MakeRecipe.css'
 
 export default class MakeRecipe extends Component {
@@ -30,6 +31,7 @@ export default class MakeRecipe extends Component {
                 { value: '', display: false },
                 { value: '', display: false },
             ],
+            token : '',
             changed: false,
             error : '',
             buffer: false
@@ -51,7 +53,6 @@ export default class MakeRecipe extends Component {
              [name] : value,
              changed : true
         })
-
     }
 
     handleArrayInputChange = (event, input, index) =>{
@@ -173,7 +174,7 @@ export default class MakeRecipe extends Component {
         e.preventDefault()
 
         let validRecipe = true
-        const { recipe_name, image, preparation_time, preparation_time_unit } = this.state
+        const { recipe_name, image, preparation_time, preparation_time_unit, token } = this.state
         const newRecipe = { recipe_name, image, preparation_time, preparation_time_unit }
 
         for(let [key, value] of Object.entries(newRecipe)){
@@ -196,6 +197,30 @@ export default class MakeRecipe extends Component {
             validRecipe = false;
         }
 
+        if(!token){
+            this.setState({error : `Please enter token`, changed: false})
+            validRecipe = false;
+        }
+        else{
+            const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%&])[\S]+/
+            if (token.length < 8) {
+                this.setState({error : `Token must be longer than 8 characters`, changed: false})
+                validRecipe = false;
+            }
+            else if (token.length > 72) {
+                this.setState({error : `Token be less than 72 characters`, changed: false})
+                validRecipe = false;
+            }
+            else if (token.startsWith(' ') || token.endsWith(' ')) {
+                this.setState({error : `Token must not start or end with empty spaces`, changed: false})
+                validRecipe = false;
+            }
+            else if (!REGEX_UPPER_LOWER_NUMBER_SPECIAL.test(token)) {
+                this.setState({error : `Token must contain one upper case, lower case, number and special character`, changed: false})
+                validRecipe = false;
+            }
+        }
+
         newRecipe.ingredients = ingredients
         newRecipe.steps = steps
 
@@ -205,13 +230,22 @@ export default class MakeRecipe extends Component {
             RecipesApiService.postRecipe(newRecipe)
                 .then(recipe =>{
                     
-                    RecipesApiService.getRecipes()
-                    .then(recipes => {
-                        this.context.setRecipes(recipes)
-                        this.props.history.push('view-all-recipes')
-                    })
-                    .catch(res=>{ 
-                            this.context.setError(res.error)})
+                    const recipeToken = { 
+                        recipe_id : recipe.id,
+                        token 
+                    }
+
+                    RecipeTokensApiService.postRecipeToken(recipeToken)
+                        .then(()=>{
+                            RecipesApiService.getRecipes()
+                                .then(recipes => {
+                                    this.context.setRecipes(recipes)
+                                    this.props.history.push('view-all-recipes')
+                                })
+                                .catch(res=>{ 
+                                        this.context.setError(res.error)})
+                        })
+                        .catch(res => this.setState({ error: res.error, buffer: false }))
                 })
                 .catch(res => {this.setState({ error: res.error, buffer: false})})
         }
@@ -272,6 +306,19 @@ export default class MakeRecipe extends Component {
                                 <option value="seconds">sec</option>
                                 <option value="minutes">min</option>
                             </select>
+                        </div>
+                        <div className="make-recipe-token-box">
+                            <label className="make-recipe-token-label">
+                                Create a Token
+                                <span className="make-recipe-break">
+                                (This will be required to edit or delete your recipe)
+                                </span>
+                            </label>
+                            <input
+                                className="make-recipe-token-input" 
+                                type="password"
+                                name="token"
+                                onChange={this.handleInputChange}/>
                         </div>
                         {this.state.buffer ? <p className="make-recipe-buffer">Uploading please wait</p> :
                             this.state.error ? <p className="make-recipe-error">{this.state.error}</p> : ''}

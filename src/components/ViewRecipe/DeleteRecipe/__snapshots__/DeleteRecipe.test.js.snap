@@ -2,8 +2,14 @@
 
 exports[`Make component renders the UI as expected 1`] = `
 <form
-  className="delete-recipe-form"
+  className="delete-recipe-form "
+  onAnimationEnd={[Function]}
   onSubmit={[Function]}
+  style={
+    Object {
+      "display": "none",
+    }
+  }
 >
   <label
     className="delete-recipe-label"
@@ -25,12 +31,12 @@ exports[`Make component renders the UI as expected 1`] = `
   >
     Submit
   </button>
-  <a
+  <button
     className="delete-recipe-back"
-    href="/view-recipe/undefined"
     onClick={[Function]}
+    type="button"
   >
     Back
-  </a>
+  </button>
 </form>
 `;

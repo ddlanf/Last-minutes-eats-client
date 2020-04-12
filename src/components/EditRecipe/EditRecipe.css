@@ -52,6 +52,7 @@ input[type=number] {
     width: 90%;
     margin-bottom: 5%;
     max-width: 500px;
+    font-size: 4.5vw;
     border: none;
     border-bottom: 1px solid black;
 }
@@ -60,7 +61,6 @@ input[type=number] {
     height: 50vw;
     width: 100%;
     font-size: 3vw;
-    padding-top: 4%;
     padding-bottom: 8%;
     overflow-y: auto;
     margin-left: auto;
@@ -91,6 +91,7 @@ input.edit-recipe-variable-input{
     width: 80%;
     font-size: 4.5vw;
     border: 1px solid black;
+    font-family: 'Baloo Tamma 2';
 }
 
 textarea{
@@ -103,6 +104,7 @@ textarea.edit-recipe-variable-input{
     font-size: 4.5vw;
     height: 22vw;
     border: 1px solid black;
+    font-family: 'Baloo Tamma 2';
 }
 
 .edit-recipe-number{
@@ -128,6 +130,7 @@ textarea.edit-recipe-variable-input{
     border: none;
     color: white;
     background-color:#006691;
+    cursor: pointer;
 }
 
 .edit-recipe-plus:active, .edit-recipe-minus:active{
@@ -149,6 +152,7 @@ textarea.edit-recipe-variable-input{
     background-color: rgb(197, 37, 37);
     border: none;
     color: white;
+    cursor: pointer;
 }
 
 .edit-recipe-preparation-time-label{
@@ -243,6 +247,7 @@ textarea.edit-recipe-variable-input{
 
     .edit-recipe-instructions-input-box{
         height: 48vw;
+        padding-top: 3%;
         margin-top: -10px;
     }
 
@@ -324,4 +329,6 @@ textarea.edit-recipe-variable-input{
         margin-top: 5vw;
         font-size: 3vw;
     }
+
+
 }

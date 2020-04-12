@@ -1,608 +1,645 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Edit component renders the UI as expected 1`] = `
-<section
-  className="edit-recipe"
->
-  <h1
-    className="edit-recipe-heading"
+Array [
+  <section
+    className="edit-recipe-gate"
   >
-    Edit This Recipe
-  </h1>
-  <form
-    className="edit-recipe-form"
-    onSubmit={[Function]}
-  >
-    <div
-      className="edit-recipe-top-field"
+    <form
+      className="edit-recipe-gate-form "
+      onSubmit={[Function]}
     >
-      <div
-        className="edit-recipe-name-field"
+      <label
+        className="edit-recipe-gate-label"
       >
-        <label
-          className="edit-recipe-label"
-        >
-          Recipe Name
-        </label>
-        <input
-          className="edit-recipe-input"
-          defaultValue=""
-          name="recipe_name"
-          onChange={[Function]}
-          type="text"
-        />
-      </div>
-      <div
-        className="edit-recipe-image-field"
-      >
-        <label
-          className="edit-recipe-label"
-        >
-          Recipe Image Link
-        </label>
-        <input
-          className="edit-recipe-input"
-          defaultValue=""
-          name="image"
-          onChange={[Function]}
-          type="text"
-        />
-      </div>
-    </div>
-    <div
-      className="edit-recipe-ingredients-and-instructions"
-    >
-      <div
-        className="edit-recipe-instructions-field"
-      >
-        <label
-          className="edit-recipe-label"
-        >
-          Instructions
-        </label>
-        <div
-          className="edit-recipe-instructions-input-box"
-        >
-          <div
-            className="edit-recipe-button-and-text steps"
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-          >
-            <span
-              className="edit-recipe-number"
-            >
-              1
-            </span>
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <textarea
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="step-1"
-              onChange={[Function]}
-              type="text"
-            />
-            
-          </div>
-          <div
-            className="edit-recipe-button-and-text steps"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            <span
-              className="edit-recipe-number"
-            >
-              2
-            </span>
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <textarea
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="step-2"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-          <div
-            className="edit-recipe-button-and-text steps"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            <span
-              className="edit-recipe-number"
-            >
-              3
-            </span>
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <textarea
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="step-3"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-          <div
-            className="edit-recipe-button-and-text steps"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            <span
-              className="edit-recipe-number"
-            >
-              4
-            </span>
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <textarea
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="step-4"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-          <div
-            className="edit-recipe-button-and-text steps"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            <span
-              className="edit-recipe-number"
-            >
-              5
-            </span>
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <textarea
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="step-5"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-          <div
-            className="edit-recipe-button-and-text steps"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            <span
-              className="edit-recipe-number"
-            >
-              6
-            </span>
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <textarea
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="step-6"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-          <div
-            className="edit-recipe-button-and-text steps"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            <span
-              className="edit-recipe-number"
-            >
-              7
-            </span>
-            
-            <textarea
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="step-7"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="edit-recipe-ingredients-field"
-      >
-        <label
-          className="edit-recipe-label"
-        >
-          Ingredients
-        </label>
-        <div
-          className="edit-recipe-ingredients-input-box"
-        >
-          <div
-            className="edit-recipe-button-and-text"
-            style={
-              Object {
-                "display": "block",
-              }
-            }
-          >
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <input
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="ingredient-1"
-              onChange={[Function]}
-              type="text"
-            />
-            
-          </div>
-          <div
-            className="edit-recipe-button-and-text"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <input
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="ingredient-1"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-          <div
-            className="edit-recipe-button-and-text"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <input
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="ingredient-1"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-          <div
-            className="edit-recipe-button-and-text"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            <button
-              className="edit-recipe-plus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              +
-            </button>
-            <input
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="ingredient-1"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-          <div
-            className="edit-recipe-button-and-text"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-          >
-            
-            <input
-              className="edit-recipe-variable-input"
-              defaultValue=""
-              name="ingredient-1"
-              onChange={[Function]}
-              type="text"
-            />
-            <button
-              className="edit-recipe-minus"
-              onClick={[Function]}
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-              type="button"
-            >
-              -
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <label
-      className="edit-recipe-preparation-time-label"
-    >
-      Preparation Time
-    </label>
-    <div
-      className="edit-recipe-preparation-time-box"
-    >
+        Enter token to edit this recipe
+      </label>
       <input
-        className="edit-recipe-preparation-time-input"
-        defaultValue=""
-        name="preparation_time"
+        className="edit-recipe-gate-input"
+        name="token"
         onChange={[Function]}
-        type="number"
+        type="password"
       />
-      <select
-        className="edit-recipe-preparation-time-unit-input"
-        onChange={[Function]}
-        value="minutes"
+      
+      <button
+        className="edit-recipe-gate-submit"
+        disabled={true}
+        type="submit"
       >
-        <option
-          value="seconds"
+        Submit
+      </button>
+      <a
+        className="edit-recipe-gate-back"
+        href="/view-recipe/undefined"
+        onClick={[Function]}
+      >
+        Back
+      </a>
+    </form>
+  </section>,
+  <section
+    className="edit-recipe"
+  >
+    <h1
+      className="edit-recipe-heading"
+    >
+      Edit This Recipe
+    </h1>
+    <form
+      className="edit-recipe-form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="edit-recipe-top-field"
+      >
+        <div
+          className="edit-recipe-name-field"
         >
-          sec
-        </option>
-        <option
+          <label
+            className="edit-recipe-label"
+          >
+            Recipe Name
+          </label>
+          <input
+            className="edit-recipe-input"
+            defaultValue=""
+            name="recipe_name"
+            onChange={[Function]}
+            type="text"
+          />
+        </div>
+        <div
+          className="edit-recipe-image-field"
+        >
+          <label
+            className="edit-recipe-label"
+          >
+            Recipe Image Link
+          </label>
+          <input
+            className="edit-recipe-input"
+            defaultValue=""
+            name="image"
+            onChange={[Function]}
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="edit-recipe-ingredients-and-instructions"
+      >
+        <div
+          className="edit-recipe-instructions-field"
+        >
+          <label
+            className="edit-recipe-label"
+          >
+            Instructions
+          </label>
+          <div
+            className="edit-recipe-instructions-input-box"
+          >
+            <div
+              className="edit-recipe-button-and-text steps"
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+            >
+              <span
+                className="edit-recipe-number"
+              >
+                1
+              </span>
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <textarea
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="step-1"
+                onChange={[Function]}
+                type="text"
+              />
+              
+            </div>
+            <div
+              className="edit-recipe-button-and-text steps"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              <span
+                className="edit-recipe-number"
+              >
+                2
+              </span>
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <textarea
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="step-2"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+            <div
+              className="edit-recipe-button-and-text steps"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              <span
+                className="edit-recipe-number"
+              >
+                3
+              </span>
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <textarea
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="step-3"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+            <div
+              className="edit-recipe-button-and-text steps"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              <span
+                className="edit-recipe-number"
+              >
+                4
+              </span>
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <textarea
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="step-4"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+            <div
+              className="edit-recipe-button-and-text steps"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              <span
+                className="edit-recipe-number"
+              >
+                5
+              </span>
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <textarea
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="step-5"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+            <div
+              className="edit-recipe-button-and-text steps"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              <span
+                className="edit-recipe-number"
+              >
+                6
+              </span>
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <textarea
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="step-6"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+            <div
+              className="edit-recipe-button-and-text steps"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              <span
+                className="edit-recipe-number"
+              >
+                7
+              </span>
+              
+              <textarea
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="step-7"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="edit-recipe-ingredients-field"
+        >
+          <label
+            className="edit-recipe-label"
+          >
+            Ingredients
+          </label>
+          <div
+            className="edit-recipe-ingredients-input-box"
+          >
+            <div
+              className="edit-recipe-button-and-text"
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+            >
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <input
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="ingredient-1"
+                onChange={[Function]}
+                type="text"
+              />
+              
+            </div>
+            <div
+              className="edit-recipe-button-and-text"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <input
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="ingredient-1"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+            <div
+              className="edit-recipe-button-and-text"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <input
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="ingredient-1"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+            <div
+              className="edit-recipe-button-and-text"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              <button
+                className="edit-recipe-plus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                +
+              </button>
+              <input
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="ingredient-1"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+            <div
+              className="edit-recipe-button-and-text"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              
+              <input
+                className="edit-recipe-variable-input"
+                defaultValue=""
+                name="ingredient-1"
+                onChange={[Function]}
+                type="text"
+              />
+              <button
+                className="edit-recipe-minus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                type="button"
+              >
+                -
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <label
+        className="edit-recipe-preparation-time-label"
+      >
+        Preparation Time
+      </label>
+      <div
+        className="edit-recipe-preparation-time-box"
+      >
+        <input
+          className="edit-recipe-preparation-time-input"
+          defaultValue=""
+          name="preparation_time"
+          onChange={[Function]}
+          type="number"
+        />
+        <select
+          className="edit-recipe-preparation-time-unit-input"
+          onChange={[Function]}
           value="minutes"
         >
-          min
-        </option>
-      </select>
-    </div>
-    
-    <button
-      className="edit-recipe-submit"
-      disabled={true}
-      name="submit"
-      style={
-        Object {
-          "opacity": "0.5",
+          <option
+            value="seconds"
+          >
+            sec
+          </option>
+          <option
+            value="minutes"
+          >
+            min
+          </option>
+        </select>
+      </div>
+      
+      <button
+        className="edit-recipe-submit"
+        disabled={true}
+        name="submit"
+        style={
+          Object {
+            "opacity": "0.5",
+          }
         }
-      }
-      type="submit"
-    >
-      Submit
-    </button>
-    <button
-      className="edit-recipe-back"
-      onClick={[Function]}
-      type="button"
-    >
-      Cancel
-    </button>
-  </form>
-</section>
+        type="submit"
+      >
+        Submit
+      </button>
+      <button
+        className="edit-recipe-back"
+        onClick={[Function]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </form>
+  </section>,
+]
 `;

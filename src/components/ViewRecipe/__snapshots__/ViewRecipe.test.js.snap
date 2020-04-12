@@ -2,6 +2,44 @@
 
 exports[`Make component renders the UI as expected 1`] = `
 Array [
+  <form
+    className="delete-recipe-form "
+    onAnimationEnd={[Function]}
+    onSubmit={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <label
+      className="delete-recipe-label"
+    >
+      Enter token to delete this recipe
+    </label>
+    <input
+      className="delete-recipe-input"
+      name="token"
+      onChange={[Function]}
+      type="password"
+    />
+    
+    
+    <button
+      className="delete-recipe-submit"
+      disabled={false}
+      type="submit"
+    >
+      Submit
+    </button>
+    <button
+      className="delete-recipe-back"
+      onClick={[Function]}
+      type="button"
+    >
+      Back
+    </button>
+  </form>,
   <section
     className="view-recipe-recipe"
   >
@@ -247,12 +285,11 @@ Array [
       </a>
     </div>
   </section>,
-  <a
+  <button
     className="view-recipe-delete"
-    href="/delete-recipe/undefined"
     onClick={[Function]}
   >
     Delete this recipe
-  </a>,
+  </button>,
 ]
 `;

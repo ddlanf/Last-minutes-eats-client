@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit component renders the UI as expected 1`] = `
+<section
+  className="edit-recipe-gate"
+>
+  <form
+    className="edit-recipe-gate-form "
+    onSubmit={[Function]}
+  >
+    <label
+      className="edit-recipe-gate-label"
+    >
+      Enter token to edit this recipe
+    </label>
+    <input
+      className="edit-recipe-gate-input"
+      name="token"
+      onChange={[Function]}
+      type="password"
+    />
+    
+    <button
+      className="edit-recipe-gate-submit"
+      disabled={true}
+      type="submit"
+    >
+      Submit
+    </button>
+    <a
+      className="edit-recipe-gate-back"
+      href="/view-recipe/undefined"
+      onClick={[Function]}
+    >
+      Back
+    </a>
+  </form>
+</section>
+`;

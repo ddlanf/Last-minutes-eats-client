@@ -1,4 +1,4 @@
-.sign-up-form{ 
+.edit-recipe-gate-form{ 
     margin-left: auto; 
     margin-right: auto; 
     display: block; 
@@ -11,12 +11,19 @@
     top: -900px;
     left: 0;
     z-index:1000;
-    background-color: rgba(0, 45, 82, 0.438);
+    background-color: rgba(0, 45, 82, 0.616);
     text-align: center; 
     animation-name: slide-down;
     animation-fill-mode: forwards;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
+}
+
+.slide-up{
+    animation-name: slide-up;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
 }
 
 @keyframes slide-down{
@@ -30,100 +37,122 @@
     100%{ top: 0}
 }
 
-.sign-up-label{
+@keyframes slide-up{
+    0% { top: 0}
+    100%{ top: -900px; display: none; }
+}
+
+.edit-recipe-gate-label{
     font-size: 7vw;
     margin-bottom: 2vw;
     display: block;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    color: white;
 }
 
-.sign-up-input{
+.edit-recipe-gate-input{
     font-size: 6vw;
     width: 50%;
     max-width: 800px;
 }
 
-.sign-up-submit{
+.edit-recipe-gate-submit{
     cursor: pointer;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: transparent;
+    background-color: #209463;
     border: 1.5px solid #209463;
+    color: white;
     border-radius: 3rem;
     padding: .5rem 2rem;
-    color:  #209463;
     font-size: 6vw;
     margin-top: 5%;
+    width: 40%;
+    max-width: 350px;
+    font-family: 'Baloo Tamma 2';
 }
 
-a.sign-up-back{
+
+a.edit-recipe-gate-back{
+    cursor: pointer;
     display: block;
+    text-decoration: none;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    background-color: transparent;
+    background-color: rgb(99, 99, 99);
     border: 1.5px solid rgb(99, 99, 99);
-    color: rgb(99, 99, 99);
-    width: 25%;
-    text-decoration: none;
+    color: white;
     border-radius: 3rem;
+    padding: 1%;
     font-size: 6vw;
     margin-top: 5%;
+    width: 32%;
+    max-width: 300px;
 }
 
 
-.sign-up-error{
+.edit-recipe-gate-error{
     color: red;
     font-size: 5vw;
+    background-color: #002D52;
+    width: 50%;
+    border-radius: 30%;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 2%;
 }
 
-.sign-up-submitted{
+.edit-recipe-gate-submitted{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     font-size: 4.2vw;
 }
 
+@media screen and (min-width: 550px){
+    .edit-recipe-gate-form{
+       padding-top: 10%;
+    }
+}
+
+
 @media screen and (min-width: 1000px){
-    .sign-up-label{
-        font-size: 4vw;
+
+    .edit-recipe-gate-form{
+        padding-top: 7%;
+     }
+
+    .edit-recipe-gate-label{
+        font-size: 5vw;
         margin-top: 6vw;
         margin-bottom: 5%;
     }
 
-    .sign-up-input{
-        font-size: 4vw;
+    .edit-recipe-gate-input{
+        font-size: 5vw;
     }
 
-    .sign-up-link{
-        margin-top: 5%;
+    .edit-recipe-gate-submit{
+        font-size: 70px;
+        font-family: 'Baloo Tamma 2';
+
+    }
+
+    a.edit-recipe-gate-back{
+        font-size: 70px;
+        padding: 0.5%;
+    }
+
+    .edit-recipe-gate-error{
         font-size: 3vw;
     }
 
-    .sign-up-submit{
-        font-size: 3vw;
-        margin-top: 3%;
-    }
-
-    .sign-up-form{
-        padding-top: 8%;
-    }
-
-    .sign-up-error{
-        font-size: 3vw;
-    }
-
-    .sign-up-submitted{
+    .edit-recipe-gate-submitted{
         font-size:  3vw;
         width: 100%;
     }
 
-    a.sign-up-back{
-        font-size: 3.5vw;
-        width: 13%;
-    }
 }

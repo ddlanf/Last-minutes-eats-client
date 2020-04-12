@@ -567,6 +567,26 @@ exports[`Make component renders the UI as expected 1`] = `
         </option>
       </select>
     </div>
+    <div
+      className="make-recipe-token-box"
+    >
+      <label
+        className="make-recipe-token-label"
+      >
+        Create a Token
+        <span
+          className="make-recipe-break"
+        >
+          (This will be required to edit or delete your recipe)
+        </span>
+      </label>
+      <input
+        className="make-recipe-token-input"
+        name="token"
+        onChange={[Function]}
+        type="password"
+      />
+    </div>
     
     <button
       className="make-recipe-submit"
