@@ -2,15 +2,25 @@ import React, { Component } from 'react'
 import './ViewAllRecipes.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { addRecipes, setError, startFetch, endFetch } from '../../actions/index'
 import RecipesApiService from '../../services/recipes-api-service'
-import RecipeContext from '../../contexts/RecipeContext'
 
-export default class ViewAllRecipes extends Component {
+class ViewAllRecipes extends Component {
 
-    static contextType = RecipeContext
-    
+    constructor(prop){
+        super(prop)
+        this.state = { loadingDotsNum : 1 }
+        this.setInterval = setInterval(()=>{
+            const newLoadingDotNum = this.state.loadingDotsNum > 2 ? this.state.loadingDotsNum - 3 : this.state.loadingDotsNum + 1
+            this.setState({
+            loadingDotsNum : newLoadingDotNum
+            });
+        }, 500)
+    }
+
     renderRecipes(){
-        const { recipes } = this.context
+        const { recipes } = this.props
         const allRecipes = recipes.map((recipe, index) =>{
             return (
                     <li
@@ -61,22 +71,99 @@ export default class ViewAllRecipes extends Component {
         return stars
     }
 
+    getRotationAngle = (target) =>{
+        const obj = window.getComputedStyle(target, null);
+        const matrix = obj.getPropertyValue('-webkit-transform') || 
+            obj.getPropertyValue('-moz-transform') ||
+            obj.getPropertyValue('-ms-transform') ||
+            obj.getPropertyValue('-o-transform') ||
+            obj.getPropertyValue('transform');
+
+        let angle = 0; 
+
+        if (matrix !== 'none') 
+        {
+            const values = matrix.split('(')[1].split(')')[0].split(',');
+            const a = values[0];
+            const b = values[1];
+            angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+        } 
+
+        return (angle < 0) ? angle +=360 : angle;
+    }
+
     componentDidMount(){
+        this.props.startFetch();       
         RecipesApiService.getRecipes()
-            .then(recipes => { this.context.setRecipes(recipes)})
-            .catch(res=>{ this.context.setError(res.error)})
+            .then(recipes => { 
+                this.props.addRecipes(recipes)
+                const img = document.getElementsByClassName("loading-recipes")[0]
+                const currentAngle = this.getRotationAngle(img)
+                img.animate([
+                    { transform: `rotateZ(${currentAngle}deg)` }, 
+                    { transform: `rotateZ(${currentAngle < 90 ? 0 : 360}deg)` }
+                  ], { 
+                    duration: (currentAngle/360) * 1000,
+                    iterations: 1
+                })
+                this.props.endFetch()
+                clearInterval(this.setInterval)
+            })
+            .catch(res=>{ 
+                this.props.setError(res.error)
+                const img = document.getElementsByClassName("loading-recipes")[0]
+                const currentAngle = this.getRotationAngle(img)
+                img.animate([
+                    { transform: `rotateZ(${currentAngle}deg)` }, 
+                    { transform: `rotateZ(${currentAngle < 90 ? 0 : 360}deg)` }
+                  ], { 
+                    duration: (currentAngle/360) * 1000,
+                    iterations: 1
+                })
+                this.props.endFetch()
+                clearInterval(this.setInterval)
+            })
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.setInterval)
     }
     
     render() {
-       
+        const { loadingDotsNum } = this.state
         return (
             <>
                <section className="view-all-recipes-recipes">
                     <ul className="view-all-recipes-lists">
-                        {this.renderRecipes()}
+                        {!this.props.fetching ?
+                            this.renderRecipes()
+                            :
+                            <h1 className="view-all-recipes-loading">
+                                Loading{['', '.', '..', '...'][loadingDotsNum]}
+                            </h1>
+                        }
                     </ul>
                </section>
             </>
         )
     }
 }
+
+const mapStateToProps = (state) =>{
+    return {
+        error: state.error,
+        recipes : state.recipes,
+        fetching: state.fetching
+    }
+}
+
+const mapDispathToProps = () =>{
+    return {
+        addRecipes,
+        setError,
+        startFetch,
+        endFetch,
+    }
+}
+
+export default connect(mapStateToProps, mapDispathToProps())(ViewAllRecipes);

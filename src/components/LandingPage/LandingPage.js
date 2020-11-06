@@ -7,7 +7,7 @@ import Taco from '../../images/tacos.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './LandingPage.css'
 
-export default class LandingPage extends Component {
+class LandingPage extends Component {
 
     state = {
         images : [true, false, false, false, false],
@@ -32,6 +32,7 @@ export default class LandingPage extends Component {
         return (
                 <div className="landing-page">
                     <div className="lading-page-top-sections">
+                        <button onClick={()=>{}}>{this.props.count}</button>
                         <section className="landing-page-hero">
                             <img 
                                 src={Pizza} 
@@ -129,3 +130,5 @@ export default class LandingPage extends Component {
         )
     }
 }
+
+export default LandingPage;

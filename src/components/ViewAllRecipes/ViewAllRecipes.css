@@ -98,6 +98,12 @@ a.view-all-recipes-link{
     text-decoration: none;
 }
 
+.view-all-recipes-loading{
+    text-align: center;
+    font-size: 2rem;
+
+}
+
 
 
 @media screen and (min-width: 1000px) {

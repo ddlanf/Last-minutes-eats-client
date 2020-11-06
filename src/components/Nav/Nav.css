@@ -118,16 +118,27 @@ button.nav-bar-right-nav-link:focus {
     100%{  transform: rotateZ(0deg); }
 }
 
+@keyframes rotate{
+    0% { transform: rotateZ(0deg);}
+    100%{  transform: rotateZ(360deg); }
+}
+
 .last-minute-eats-logo{
     max-width: 15vw;
 }
 
-.last-minute-eats-logo > img{
+
+.not-loading-recipes{
     margin-top: 1.6px;
     width: 15vw;
     max-width: 70px;
     animation: tilt 10s 0s infinite forwards;
 }
+
+.loading-recipes{
+    animation: rotate 1s linear infinite forwards;
+}
+
 
 @media screen and (min-width: 550px) {
     .line{

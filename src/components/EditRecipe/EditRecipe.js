@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import RecipesApiService from '../../services/recipes-api-service'
-import RecipeContext from '../../contexts/RecipeContext'
 import { withRouter} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { addRecipes, setError } from '../../actions/index'
 import EditRecipeGate from './EditRecipeGate/EditRecipeGate'
 import './EditRecipe.css'
 
 class EditRecipe extends Component {
 
     _isMounted = false;
-
-    static contextType = RecipeContext
 
     constructor(props){
         super(props)
@@ -217,10 +216,12 @@ class EditRecipe extends Component {
                 .then(() =>{
                     RecipesApiService.getRecipes()
                         .then(recipes => { 
-                            this.context.setRecipes(recipes)
+                            this.props.addRecipes(recipes)
                             this.props.history.push('/view-all-recipes')
                         })
-                        .catch(res=>{ this.context.setError(res.error)})
+                        .catch(res=>{ 
+                            this.props.setError(res.error)
+                        })
                 })
                 .catch((res) => {
                         this.setState({ error: res.error, buffer: false })
@@ -263,7 +264,9 @@ class EditRecipe extends Component {
                 }
                this.setState({ ...defaultRecipe })
             })
-            .catch(res => {this.context.setError(res.error)})
+            .catch(res => {
+                this.props.setError(res.error)
+            })
     }
 
     componentWillUnmount() {
@@ -361,4 +364,18 @@ class EditRecipe extends Component {
 }
 
 
-export default withRouter(EditRecipe)
+const mapStateToProps = (state) =>{
+    return {
+        error: state.error,
+        recipes : state.recipes
+    }
+}
+
+const mapDispathToProps = () =>{
+    return {
+        addRecipes,
+        setError,
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispathToProps())(EditRecipe));

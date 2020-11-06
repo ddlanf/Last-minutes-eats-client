@@ -2,7 +2,6 @@ import config from '../config'
 
 const RecipeTokenApiService = {
     checkRecipeToken(recipeToken, recipeId){
-
         return fetch(`${config.API_ENDPOINT}/recipe-tokens/${recipeId}`, {
             method: 'GET',
             headers: {

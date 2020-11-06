@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RecipesApiService from '../../services/recipes-api-service'
-import RecipeContext from '../../contexts/RecipeContext'
+import { addCurrentRecipe,  setError } from '../../actions/index'
+import { connect } from 'react-redux'
 import StarRating from './StarRating/StarRating'
 import DeleteRecipe from './DeleteRecipe/DeleteRecipe'
 import './ViewRecipe.css'
 
 class ViewRecipe extends Component {
-
-    static contextType = RecipeContext
 
     state = { showDeleteRecipe: false }
 
@@ -51,20 +50,23 @@ class ViewRecipe extends Component {
     }
 
     componentDidMount(){
+        window.scrollTo(0, 0);
         const { recipeId } = this.props.match.params;
 
         RecipesApiService.getRecipe(recipeId)
             .then(recipe =>{
-                this.context.setRecipe(recipe)
+                this.props.addCurrentRecipe(recipe)
             })
-            .catch(res => {this.context.setError(res.error)})
+            .catch(res => {
+                this.props.setError(res.error)
+            })
     }
 
     render() {
         
         const defaultRecipe = { steps: [], ingredients: [], preparation_time_unit: ''}
 
-        const recipe = this.context.recipe.recipe_name ? this.context.recipe : defaultRecipe 
+        const recipe = this.props.recipe.recipe_name ? this.props.recipe : defaultRecipe 
      
         const { recipeId } = this.props.match.params;
 
@@ -138,4 +140,18 @@ class ViewRecipe extends Component {
     }
 }
 
-export default withRouter(ViewRecipe)
+const mapStateToProps = (state) =>{
+    return {
+        error: state.error,
+        recipe: state.currentRecipe
+    }
+}
+
+const mapDispathToProps = () =>{
+    return {
+        addCurrentRecipe,
+        setError,
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispathToProps())(ViewRecipe));

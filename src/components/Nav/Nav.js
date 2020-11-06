@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 import TokenService from '../../services/token-service'
 import SignUp from './SignUp/SignUp'
 import "./Nav.css"
@@ -12,7 +13,7 @@ class Nav extends Component {
           hasEmailToken: TokenService.hasEmailToken(),
           showSignUp : false
         }
-      }
+    }
 
     toggleSignUp = (showSignUp) =>{
         this.setState({ showSignUp })
@@ -80,7 +81,7 @@ class Nav extends Component {
                     <div className="logo-container">
                         <div className="line"></div>
                         <Link to="/" className="last-minute-eats-logo">
-                            <img  src={require('../../images/logo.png')} alt="logo"/>
+                            <img  className={this.props.fetching ? "loading-recipes" : "not-loading-recipes"} src={require('../../images/logo.png')} alt="logo"/>
                         </Link>
                     </div>
                     <div className="nav-bar-right-nav">
@@ -92,5 +93,10 @@ class Nav extends Component {
     }
 }
 
+const mapStateToProps = (state) =>{
+    return {
+        fetching: state.fetching,
+    }
+}
 
-export default Nav
+export default connect(mapStateToProps)(Nav)

@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import RecipesApiService from '../../services/recipes-api-service'
-import RecipeContext from '../../contexts/RecipeContext'
+import { connect } from 'react-redux'
+import { addRecipes, setError } from '../../actions/index'
 import RecipeTokensApiService from '../../services/recipe-token-api-service'
 import './MakeRecipe.css'
 
-export default class MakeRecipe extends Component {
-
-    static contextType = RecipeContext
+class MakeRecipe extends Component {
 
     constructor(props){
         super(props)
@@ -239,11 +238,12 @@ export default class MakeRecipe extends Component {
                         .then(()=>{
                             RecipesApiService.getRecipes()
                                 .then(recipes => {
-                                    this.context.setRecipes(recipes)
+                                    this.props.addRecipes(recipes)
                                     this.props.history.push('view-all-recipes')
                                 })
                                 .catch(res=>{ 
-                                        this.context.setError(res.error)})
+                                    this.props.setError(res.error)
+                                })
                         })
                         .catch(res => this.setState({ error: res.error, buffer: false }))
                 })
@@ -343,3 +343,19 @@ export default class MakeRecipe extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) =>{
+    return {
+        error: state.error,
+        recipes : state.recipes
+    }
+}
+
+const mapDispathToProps = () =>{
+    return {
+        addRecipes,
+        setError,
+    }
+}
+
+export default connect(mapStateToProps, mapDispathToProps())(MakeRecipe);
