@@ -90,6 +90,7 @@ Array [
       >
         <img
           alt="logo"
+          className="not-loading-recipes"
           src="logo.png"
         />
       </a>

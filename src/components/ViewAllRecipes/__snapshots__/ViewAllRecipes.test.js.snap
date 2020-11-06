@@ -6,6 +6,13 @@ exports[`Make component renders the UI as expected 1`] = `
 >
   <ul
     className="view-all-recipes-lists"
-  />
+  >
+    <h1
+      className="view-all-recipes-loading"
+    >
+      Loading
+      .
+    </h1>
+  </ul>
 </section>
 `;

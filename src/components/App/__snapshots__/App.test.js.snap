@@ -95,6 +95,7 @@ exports[`App component renders the UI as expected 1`] = `
         >
           <img
             alt="logo"
+            className="not-loading-recipes"
             src="logo.png"
           />
         </a>
@@ -120,6 +121,9 @@ exports[`App component renders the UI as expected 1`] = `
       <div
         className="lading-page-top-sections"
       >
+        <button
+          onClick={[Function]}
+        />
         <section
           className="landing-page-hero"
         >

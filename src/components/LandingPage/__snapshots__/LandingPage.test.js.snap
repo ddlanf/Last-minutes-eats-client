@@ -7,6 +7,9 @@ exports[`Make component renders the UI as expected 1`] = `
   <div
     className="lading-page-top-sections"
   >
+    <button
+      onClick={[Function]}
+    />
     <section
       className="landing-page-hero"
     >
