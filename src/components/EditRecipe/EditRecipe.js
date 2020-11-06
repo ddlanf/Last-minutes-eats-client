@@ -265,7 +265,7 @@ class EditRecipe extends Component {
                this.setState({ ...defaultRecipe })
             })
             .catch(res => {
-                this.props.setError(res.error)
+                this.props.setError(res)
             })
     }
 

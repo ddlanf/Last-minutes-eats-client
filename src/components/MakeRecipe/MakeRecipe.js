@@ -242,7 +242,7 @@ class MakeRecipe extends Component {
                                     this.props.history.push('view-all-recipes')
                                 })
                                 .catch(res=>{ 
-                                    this.props.setError(res.error)
+                                    this.props.setError(res)
                                 })
                         })
                         .catch(res => this.setState({ error: res.error, buffer: false }))

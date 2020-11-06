@@ -110,7 +110,7 @@ class ViewAllRecipes extends Component {
                 clearInterval(this.setInterval)
             })
             .catch(res=>{ 
-                this.props.setError(res.error)
+                this.props.setError(res)
                 const img = document.getElementsByClassName("loading-recipes")[0]
                 const currentAngle = this.getRotationAngle(img)
                 img.animate([
@@ -127,6 +127,7 @@ class ViewAllRecipes extends Component {
 
     componentWillUnmount(){
         clearInterval(this.setInterval)
+        this.props.endFetch()
     }
     
     render() {

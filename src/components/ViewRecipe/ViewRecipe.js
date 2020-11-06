@@ -58,7 +58,7 @@ class ViewRecipe extends Component {
                 this.props.addCurrentRecipe(recipe)
             })
             .catch(res => {
-                this.props.setError(res.error)
+                this.props.setError(res)
             })
     }
 
