@@ -32,7 +32,6 @@ class LandingPage extends Component {
         return (
                 <div className="landing-page">
                     <div className="lading-page-top-sections">
-                        <button onClick={()=>{}}>{this.props.count}</button>
                         <section className="landing-page-hero">
                             <img 
                                 src={Pizza} 
