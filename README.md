@@ -26,3 +26,4 @@ Running the App locally requires ones to clone [https://last-minute-eats-server.
 2. Configure the CORS setting in "last-minute-eats-server" to allow the localhost to send requests. This can be done simply adding app.use(cors()) in App.js file or chaging the value of CLIENT_ORIGIN in config.js  
 3. Run both client and server with "npm start". "npm run dev" can also be used in "last-minute-eats-server"<!-- Just adding a random comment --><!-- Just adding a random comment --><!-- Just adding a random comment --><!-- Just adding a random comment --><!-- Just adding another harmless comment -->
 <!-- Just adding another harmless comment -->
+<!-- Just adding another harmless comment -->
